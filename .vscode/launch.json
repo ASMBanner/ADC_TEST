@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "J-Link 调试 (STM32F407)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "jlink",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/Output/atk_f407.elf",
+            "device": "STM32F407ZG",
+            "interface": "swd",
+            "serverpath": "/usr/local/bin/JLinkGDBServer",
+            "preLaunchTask": "build",
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "none"
+        },
+        {
+            "name": "J-Link 调试 (不重新编译)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "jlink",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/Output/atk_f407.elf",
+            "device": "STM32F407ZG",
+            "interface": "swd",
+            "serverpath": "/usr/local/bin/JLinkGDBServer",
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "none"
+        }
+    ]
+}

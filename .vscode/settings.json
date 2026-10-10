@@ -1,0 +1,4 @@
+{
+    "cortex-debug.armToolchainPath": "/Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin",
+    "cortex-debug.JLinkGDBServerPath": "/usr/local/bin/JLinkGDBServer"
+}
