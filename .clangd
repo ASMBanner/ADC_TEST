@@ -1,0 +1,26 @@
+# clangd 配置文件（只影响编辑器的 C/C++ 智能提示，不影响 Keil 实际编译）
+#
+# 本工程用 Keil MDK 构建，没有 compile_commands.json，clangd 找不到头文件
+# 搜索路径，于是 main.c 里的 RED / BLUE 等宏（定义在 lcd.h）被认为是
+# "Use of undeclared identifier"，出现大量波浪线。
+# 下面把 Keil 工程里的宏和 Include 路径同步给 clangd 即可消除误报。
+#
+# 注意：clangd 会把这里的相对路径按“源文件所在目录”解析，所以这里用绝对路径。
+# 若整个工程被移动到别的目录，请同步修改下面的路径。
+CompileFlags:
+  Add:
+    # 与 Keil 的 <Define>USE_HAL_DRIVER,STM32F407xx</Define> 保持一致
+    - -DUSE_HAL_DRIVER
+    - -DSTM32F407xx
+    # 与 Keil 的 <IncludePath> 保持一致
+    - -I/Users/banner/Work/ST/git/ADC_TEST/User
+    - -I/Users/banner/Work/ST/git/ADC_TEST/Drivers
+    - -I/Users/banner/Work/ST/git/ADC_TEST/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+    - -I/Users/banner/Work/ST/git/ADC_TEST/Drivers/CMSIS/Include
+    - -I/Users/banner/Work/ST/git/ADC_TEST/Drivers/STM32F4xx_HAL_Driver/Inc
+    - -I/Users/banner/Work/ST/git/ADC_TEST/Middlewares
+    # main.c 里的 #include "./BSP/LCD/lcd.h" 是相对 Drivers 目录解析的，
+    # 因此上面的 Drivers 路径必不可少。
+    # 第三方 HAL/LL 头文件在 64 位主机上会报指针类型转换告警，屏蔽掉。
+    - -Wno-pointer-to-int-cast
+    - -Wno-int-to-pointer-cast

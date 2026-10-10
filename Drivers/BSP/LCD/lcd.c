@@ -1122,19 +1122,19 @@ void lcd_show_char(uint16_t x, uint16_t y, char chr, uint8_t size, uint8_t mode,
     switch (size)
     {
         case 12:
-            pfont = (uint8_t *)asc2_1206[chr];  /* 调用1206字体 */
+            pfont = (uint8_t *)asc2_1206[(uint8_t)chr];  /* 调用1206字体 */
             break;
 
         case 16:
-            pfont = (uint8_t *)asc2_1608[chr];  /* 调用1608字体 */
+            pfont = (uint8_t *)asc2_1608[(uint8_t)chr];  /* 调用1608字体 */
             break;
 
         case 24:
-            pfont = (uint8_t *)asc2_2412[chr];  /* 调用2412字体 */
+            pfont = (uint8_t *)asc2_2412[(uint8_t)chr];  /* 调用2412字体 */
             break;
 
         case 32:
-            pfont = (uint8_t *)asc2_3216[chr];  /* 调用3216字体 */
+            pfont = (uint8_t *)asc2_3216[(uint8_t)chr];  /* 调用3216字体 */
             break;
 
         default:
