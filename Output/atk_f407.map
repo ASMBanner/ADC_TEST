@@ -1078,7 +1078,7 @@ LOAD /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm
                 0x08000000                g_pfnVectors
                 0x08000188                        . = ALIGN (0x4)
 
-.text           0x08000190     0x7190
+.text           0x08000190     0x7198
                 0x08000190                        . = ALIGN (0x4)
  *(.text)
  .text          0x08000190       0xa0 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memchr.o)
@@ -1209,511 +1209,511 @@ LOAD /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm
                 0x080009ec                DMA2_Stream6_IRQHandler
                 0x080009ec                RTC_Alarm_IRQHandler
  *fill*         0x080009ee        0x2 
- .text.main     0x080009f0      0x17c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_main.c.o
+ .text.main     0x080009f0      0x184 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_main.c.o
                 0x080009f0                main
  .text.NMI_Handler
-                0x08000b6c        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_stm32f4xx_it.c.o
-                0x08000b6c                NMI_Handler
- .text.HardFault_Handler
-                0x08000b6e        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_stm32f4xx_it.c.o
-                0x08000b6e                HardFault_Handler
- .text.MemManage_Handler
-                0x08000b70        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_stm32f4xx_it.c.o
-                0x08000b70                MemManage_Handler
- .text.BusFault_Handler
-                0x08000b72        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_stm32f4xx_it.c.o
-                0x08000b72                BusFault_Handler
- .text.UsageFault_Handler
                 0x08000b74        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_stm32f4xx_it.c.o
-                0x08000b74                UsageFault_Handler
- .text.SVC_Handler
+                0x08000b74                NMI_Handler
+ .text.HardFault_Handler
                 0x08000b76        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_stm32f4xx_it.c.o
-                0x08000b76                SVC_Handler
- .text.DebugMon_Handler
+                0x08000b76                HardFault_Handler
+ .text.MemManage_Handler
                 0x08000b78        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_stm32f4xx_it.c.o
-                0x08000b78                DebugMon_Handler
- .text.PendSV_Handler
+                0x08000b78                MemManage_Handler
+ .text.BusFault_Handler
                 0x08000b7a        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_stm32f4xx_it.c.o
-                0x08000b7a                PendSV_Handler
+                0x08000b7a                BusFault_Handler
+ .text.UsageFault_Handler
+                0x08000b7c        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_stm32f4xx_it.c.o
+                0x08000b7c                UsageFault_Handler
+ .text.SVC_Handler
+                0x08000b7e        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_stm32f4xx_it.c.o
+                0x08000b7e                SVC_Handler
+ .text.DebugMon_Handler
+                0x08000b80        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_stm32f4xx_it.c.o
+                0x08000b80                DebugMon_Handler
+ .text.PendSV_Handler
+                0x08000b82        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_stm32f4xx_it.c.o
+                0x08000b82                PendSV_Handler
  .text.SysTick_Handler
-                0x08000b7c        0x8 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_stm32f4xx_it.c.o
-                0x08000b7c                SysTick_Handler
- .text._write   0x08000b84       0x24 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_syscalls.c.o
-                0x08000b84                _write
- .text._read    0x08000ba8        0x4 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_syscalls.c.o
-                0x08000ba8                _read
- .text._close   0x08000bac        0x6 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_syscalls.c.o
-                0x08000bac                _close
- .text._fstat   0x08000bb2        0xa /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_syscalls.c.o
-                0x08000bb2                _fstat
- .text._isatty  0x08000bbc        0x4 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_syscalls.c.o
-                0x08000bbc                _isatty
- .text._lseek   0x08000bc0        0x4 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_syscalls.c.o
-                0x08000bc0                _lseek
- .text._sbrk    0x08000bc4       0x3c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_syscalls.c.o
-                0x08000bc4                _sbrk
+                0x08000b84        0x8 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_stm32f4xx_it.c.o
+                0x08000b84                SysTick_Handler
+ .text._write   0x08000b8c       0x24 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_syscalls.c.o
+                0x08000b8c                _write
+ .text._read    0x08000bb0        0x4 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_syscalls.c.o
+                0x08000bb0                _read
+ .text._close   0x08000bb4        0x6 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_syscalls.c.o
+                0x08000bb4                _close
+ .text._fstat   0x08000bba        0xa /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_syscalls.c.o
+                0x08000bba                _fstat
+ .text._isatty  0x08000bc4        0x4 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_syscalls.c.o
+                0x08000bc4                _isatty
+ .text._lseek   0x08000bc8        0x4 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_syscalls.c.o
+                0x08000bc8                _lseek
+ .text._sbrk    0x08000bcc       0x3c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_syscalls.c.o
+                0x08000bcc                _sbrk
  .text.SystemInit
-                0x08000c00       0x14 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_CMSIS_Device_ST_STM32F4xx_Source_Templates_system_stm32f4xx.c.o
-                0x08000c00                SystemInit
+                0x08000c08       0x14 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_CMSIS_Device_ST_STM32F4xx_Source_Templates_system_stm32f4xx.c.o
+                0x08000c08                SystemInit
  .text.delay_init
-                0x08000c14        0xc /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_delay_delay.c.o
-                0x08000c14                delay_init
+                0x08000c1c        0xc /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_delay_delay.c.o
+                0x08000c1c                delay_init
  .text.delay_us
-                0x08000c20       0x3c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_delay_delay.c.o
-                0x08000c20                delay_us
+                0x08000c28       0x3c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_delay_delay.c.o
+                0x08000c28                delay_us
  .text.delay_ms
-                0x08000c5c       0x10 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_delay_delay.c.o
-                0x08000c5c                delay_ms
+                0x08000c64       0x10 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_delay_delay.c.o
+                0x08000c64                delay_ms
  .text.sys_stm32_clock_init
-                0x08000c6c       0xcc /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_sys_sys.c.o
-                0x08000c6c                sys_stm32_clock_init
+                0x08000c74       0xcc /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_sys_sys.c.o
+                0x08000c74                sys_stm32_clock_init
  .text.usart_init
-                0x08000d38       0x38 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_usart_usart.c.o
-                0x08000d38                usart_init
+                0x08000d40       0x38 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_usart_usart.c.o
+                0x08000d40                usart_init
  .text.HAL_UART_MspInit
-                0x08000d70       0x98 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_usart_usart.c.o
-                0x08000d70                HAL_UART_MspInit
+                0x08000d78       0x98 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_usart_usart.c.o
+                0x08000d78                HAL_UART_MspInit
  .text.HAL_UART_RxCpltCallback
-                0x08000e08       0x8c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_usart_usart.c.o
-                0x08000e08                HAL_UART_RxCpltCallback
+                0x08000e10       0x8c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_usart_usart.c.o
+                0x08000e10                HAL_UART_RxCpltCallback
  .text.USART1_IRQHandler
-                0x08000e94       0x10 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_usart_usart.c.o
-                0x08000e94                USART1_IRQHandler
+                0x08000e9c       0x10 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_usart_usart.c.o
+                0x08000e9c                USART1_IRQHandler
  .text.HAL_MspInit
-                0x08000ea4        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal.c.o
-                0x08000ea4                HAL_MspInit
- *fill*         0x08000ea6        0x2 
+                0x08000eac        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal.c.o
+                0x08000eac                HAL_MspInit
+ *fill*         0x08000eae        0x2 
  .text.HAL_InitTick
-                0x08000ea8       0x4c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal.c.o
-                0x08000ea8                HAL_InitTick
+                0x08000eb0       0x4c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal.c.o
+                0x08000eb0                HAL_InitTick
  .text.HAL_Init
-                0x08000ef4       0x2c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal.c.o
-                0x08000ef4                HAL_Init
+                0x08000efc       0x2c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal.c.o
+                0x08000efc                HAL_Init
  .text.HAL_IncTick
-                0x08000f20       0x18 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal.c.o
-                0x08000f20                HAL_IncTick
+                0x08000f28       0x18 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal.c.o
+                0x08000f28                HAL_IncTick
  .text.HAL_GetTick
-                0x08000f38        0xc /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal.c.o
-                0x08000f38                HAL_GetTick
+                0x08000f40        0xc /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal.c.o
+                0x08000f40                HAL_GetTick
  .text.HAL_GetREVID
-                0x08000f44        0xc /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal.c.o
-                0x08000f44                HAL_GetREVID
+                0x08000f4c        0xc /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal.c.o
+                0x08000f4c                HAL_GetREVID
  .text.HAL_NVIC_SetPriorityGrouping
-                0x08000f50       0x24 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_cortex.c.o
-                0x08000f50                HAL_NVIC_SetPriorityGrouping
+                0x08000f58       0x24 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_cortex.c.o
+                0x08000f58                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x08000f74       0x64 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_cortex.c.o
-                0x08000f74                HAL_NVIC_SetPriority
+                0x08000f7c       0x64 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_cortex.c.o
+                0x08000f7c                HAL_NVIC_SetPriority
  .text.HAL_NVIC_EnableIRQ
-                0x08000fd8       0x1c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_cortex.c.o
-                0x08000fd8                HAL_NVIC_EnableIRQ
+                0x08000fe0       0x1c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_cortex.c.o
+                0x08000fe0                HAL_NVIC_EnableIRQ
  .text.HAL_SYSTICK_Config
-                0x08000ff4       0x28 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_cortex.c.o
-                0x08000ff4                HAL_SYSTICK_Config
+                0x08000ffc       0x28 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_cortex.c.o
+                0x08000ffc                HAL_SYSTICK_Config
  .text.HAL_DMA_Abort
-                0x0800101c       0x94 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_dma.c.o
-                0x0800101c                HAL_DMA_Abort
+                0x08001024       0x94 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_dma.c.o
+                0x08001024                HAL_DMA_Abort
  .text.HAL_DMA_Abort_IT
-                0x080010b0       0x24 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_dma.c.o
-                0x080010b0                HAL_DMA_Abort_IT
+                0x080010b8       0x24 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_dma.c.o
+                0x080010b8                HAL_DMA_Abort_IT
  .text.HAL_GPIO_Init
-                0x080010d4      0x208 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_gpio.c.o
-                0x080010d4                HAL_GPIO_Init
+                0x080010dc      0x208 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_gpio.c.o
+                0x080010dc                HAL_GPIO_Init
  .text.HAL_GPIO_WritePin
-                0x080012dc        0xc /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_gpio.c.o
-                0x080012dc                HAL_GPIO_WritePin
+                0x080012e4        0xc /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_gpio.c.o
+                0x080012e4                HAL_GPIO_WritePin
  .text.HAL_GPIO_TogglePin
-                0x080012e8       0x12 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_gpio.c.o
-                0x080012e8                HAL_GPIO_TogglePin
- *fill*         0x080012fa        0x2 
+                0x080012f0       0x12 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_gpio.c.o
+                0x080012f0                HAL_GPIO_TogglePin
+ *fill*         0x08001302        0x2 
  .text.HAL_RCC_OscConfig
-                0x080012fc      0x3fc /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_rcc.c.o
-                0x080012fc                HAL_RCC_OscConfig
+                0x08001304      0x3fc /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_rcc.c.o
+                0x08001304                HAL_RCC_OscConfig
  .text.HAL_RCC_GetSysClockFreq
-                0x080016f8       0xdc /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_rcc.c.o
-                0x080016f8                HAL_RCC_GetSysClockFreq
+                0x08001700       0xdc /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_rcc.c.o
+                0x08001700                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_ClockConfig
-                0x080017d4      0x160 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_rcc.c.o
-                0x080017d4                HAL_RCC_ClockConfig
+                0x080017dc      0x160 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_rcc.c.o
+                0x080017dc                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetPCLK1Freq
-                0x08001934       0x20 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_rcc.c.o
-                0x08001934                HAL_RCC_GetPCLK1Freq
+                0x0800193c       0x20 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_rcc.c.o
+                0x0800193c                HAL_RCC_GetPCLK1Freq
  .text.HAL_RCC_GetPCLK2Freq
-                0x08001954       0x20 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_rcc.c.o
-                0x08001954                HAL_RCC_GetPCLK2Freq
+                0x0800195c       0x20 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_rcc.c.o
+                0x0800195c                HAL_RCC_GetPCLK2Freq
  .text.UART_EndRxTransfer
-                0x08001974       0x32 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
- *fill*         0x080019a6        0x2 
+                0x0800197c       0x32 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
+ *fill*         0x080019ae        0x2 
  .text.UART_SetConfig
-                0x080019a8      0x104 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
+                0x080019b0      0x104 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
  .text.HAL_UART_Init
-                0x08001aac       0x5e /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
-                0x08001aac                HAL_UART_Init
+                0x08001ab4       0x5e /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
+                0x08001ab4                HAL_UART_Init
  .text.HAL_UART_TxCpltCallback
-                0x08001b0a        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
-                0x08001b0a                HAL_UART_TxCpltCallback
+                0x08001b12        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
+                0x08001b12                HAL_UART_TxCpltCallback
  .text.HAL_UART_ErrorCallback
-                0x08001b0c        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
-                0x08001b0c                HAL_UART_ErrorCallback
+                0x08001b14        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
+                0x08001b14                HAL_UART_ErrorCallback
  .text.UART_DMAAbortOnError
-                0x08001b0e       0x10 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
+                0x08001b16       0x10 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
  .text.HAL_UARTEx_RxEventCallback
-                0x08001b1e        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
-                0x08001b1e                HAL_UARTEx_RxEventCallback
+                0x08001b26        0x2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
+                0x08001b26                HAL_UARTEx_RxEventCallback
  .text.UART_Receive_IT
-                0x08001b20       0xae /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
- *fill*         0x08001bce        0x2 
+                0x08001b28       0xae /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
+ *fill*         0x08001bd6        0x2 
  .text.HAL_UART_IRQHandler
-                0x08001bd0      0x278 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
-                0x08001bd0                HAL_UART_IRQHandler
+                0x08001bd8      0x278 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
+                0x08001bd8                HAL_UART_IRQHandler
  .text.UART_Start_Receive_IT
-                0x08001e48       0x36 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
-                0x08001e48                UART_Start_Receive_IT
+                0x08001e50       0x36 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
+                0x08001e50                UART_Start_Receive_IT
  .text.HAL_UART_Receive_IT
-                0x08001e7e       0x36 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
-                0x08001e7e                HAL_UART_Receive_IT
+                0x08001e86       0x36 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
+                0x08001e86                HAL_UART_Receive_IT
  .text.HAL_SRAM_Init
-                0x08001eb4       0x52 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_sram.c.o
-                0x08001eb4                HAL_SRAM_Init
- *fill*         0x08001f06        0x2 
+                0x08001ebc       0x52 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_sram.c.o
+                0x08001ebc                HAL_SRAM_Init
+ *fill*         0x08001f0e        0x2 
  .text.FSMC_NORSRAM_Init
-                0x08001f08       0x78 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_ll_fsmc.c.o
-                0x08001f08                FSMC_NORSRAM_Init
+                0x08001f10       0x78 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_ll_fsmc.c.o
+                0x08001f10                FSMC_NORSRAM_Init
  .text.FSMC_NORSRAM_Timing_Init
-                0x08001f80       0x40 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_ll_fsmc.c.o
-                0x08001f80                FSMC_NORSRAM_Timing_Init
+                0x08001f88       0x40 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_ll_fsmc.c.o
+                0x08001f88                FSMC_NORSRAM_Timing_Init
  .text.FSMC_NORSRAM_Extended_Timing_Init
-                0x08001fc0       0x4c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_ll_fsmc.c.o
-                0x08001fc0                FSMC_NORSRAM_Extended_Timing_Init
+                0x08001fc8       0x4c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_ll_fsmc.c.o
+                0x08001fc8                FSMC_NORSRAM_Extended_Timing_Init
  .text.HAL_ADC_Init
-                0x0800200c      0x184 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_adc.c.o
-                0x0800200c                HAL_ADC_Init
+                0x08002014      0x184 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_adc.c.o
+                0x08002014                HAL_ADC_Init
  .text.HAL_ADC_Start
-                0x08002190      0x148 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_adc.c.o
-                0x08002190                HAL_ADC_Start
+                0x08002198      0x148 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_adc.c.o
+                0x08002198                HAL_ADC_Start
  .text.HAL_ADC_PollForConversion
-                0x080022d8       0xc2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_adc.c.o
-                0x080022d8                HAL_ADC_PollForConversion
+                0x080022e0       0xc2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_adc.c.o
+                0x080022e0                HAL_ADC_PollForConversion
  .text.HAL_ADC_GetValue
-                0x0800239a        0x6 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_adc.c.o
-                0x0800239a                HAL_ADC_GetValue
+                0x080023a2        0x6 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_adc.c.o
+                0x080023a2                HAL_ADC_GetValue
  .text.HAL_ADC_ConfigChannel
-                0x080023a0      0x1d8 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_adc.c.o
-                0x080023a0                HAL_ADC_ConfigChannel
+                0x080023a8      0x1d8 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_adc.c.o
+                0x080023a8                HAL_ADC_ConfigChannel
  .text.led_init
-                0x08002578       0x80 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LED_led.c.o
-                0x08002578                led_init
+                0x08002580       0x80 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LED_led.c.o
+                0x08002580                led_init
  .text.lcd_rd_data
-                0x080025f8       0x1a /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x08002600       0x1a /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
  .text.lcd_wr_data
-                0x08002612       0x22 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x08002612                lcd_wr_data
+                0x0800261a       0x22 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x0800261a                lcd_wr_data
  .text.lcd_wr_regno
-                0x08002634       0x22 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x08002634                lcd_wr_regno
+                0x0800263c       0x22 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x0800263c                lcd_wr_regno
  .text.lcd_ex_st7789_reginit
-                0x08002656      0x1a8 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x08002656                lcd_ex_st7789_reginit
+                0x0800265e      0x1a8 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x0800265e                lcd_ex_st7789_reginit
  .text.lcd_ex_ili9341_reginit
-                0x080027fe      0x22c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x080027fe                lcd_ex_ili9341_reginit
+                0x08002806      0x22c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x08002806                lcd_ex_ili9341_reginit
  .text.lcd_ex_nt35310_reginit
-                0x08002a2a      0xef2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x08002a2a                lcd_ex_nt35310_reginit
+                0x08002a32      0xef2 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x08002a32                lcd_ex_nt35310_reginit
  .text.lcd_ex_st7796_reginit
-                0x0800391c      0x1c6 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x0800391c                lcd_ex_st7796_reginit
+                0x08003924      0x1c6 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x08003924                lcd_ex_st7796_reginit
  .text.lcd_ex_ili9806_reginit
-                0x08003ae2      0x340 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x08003ae2                lcd_ex_ili9806_reginit
+                0x08003aea      0x340 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x08003aea                lcd_ex_ili9806_reginit
  .text.lcd_ex_ssd1963_reginit
-                0x08003e22      0x16e /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x08003e22                lcd_ex_ssd1963_reginit
+                0x08003e2a      0x16e /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x08003e2a                lcd_ex_ssd1963_reginit
  .text.lcd_ex_nt35510_reginit
-                0x08003f90     0x1450 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x08003f90                lcd_ex_nt35510_reginit
+                0x08003f98     0x1450 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x08003f98                lcd_ex_nt35510_reginit
  .text.lcd_write_ram_prepare
-                0x080053e0       0x14 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x080053e0                lcd_write_ram_prepare
+                0x080053e8       0x14 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x080053e8                lcd_write_ram_prepare
  .text.lcd_set_cursor
-                0x080053f4      0x10c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x080053f4                lcd_set_cursor
+                0x080053fc      0x10c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x080053fc                lcd_set_cursor
  .text.lcd_scan_dir
-                0x08005500      0x290 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x08005500                lcd_scan_dir
+                0x08005508      0x290 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x08005508                lcd_scan_dir
  .text.lcd_draw_point
-                0x08005790       0x18 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x08005790                lcd_draw_point
+                0x08005798       0x18 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x08005798                lcd_draw_point
  .text.lcd_ssd_backlight_set
-                0x080057a8       0x50 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x080057a8                lcd_ssd_backlight_set
+                0x080057b0       0x50 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x080057b0                lcd_ssd_backlight_set
  .text.lcd_display_dir
-                0x080057f8      0x128 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x080057f8                lcd_display_dir
+                0x08005800      0x128 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x08005800                lcd_display_dir
  .text.HAL_SRAM_MspInit
-                0x08005920       0x84 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x08005920                HAL_SRAM_MspInit
+                0x08005928       0x84 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x08005928                HAL_SRAM_MspInit
  .text.lcd_clear
-                0x080059a4       0x34 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x080059a4                lcd_clear
+                0x080059ac       0x34 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x080059ac                lcd_clear
  .text.lcd_init
-                0x080059d8      0x414 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x080059d8                lcd_init
+                0x080059e0      0x414 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x080059e0                lcd_init
  .text.lcd_show_char
-                0x08005dec      0x118 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x08005dec                lcd_show_char
+                0x08005df4      0x118 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x08005df4                lcd_show_char
  .text.lcd_show_xnum
-                0x08005f04      0x100 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x08005f04                lcd_show_xnum
+                0x08005f0c      0x100 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x08005f0c                lcd_show_xnum
  .text.lcd_show_string
-                0x08006004       0x74 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x08006004                lcd_show_string
+                0x0800600c       0x74 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x0800600c                lcd_show_string
  .text.adc_init
-                0x08006078       0x3c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_ADC_adc.c.o
-                0x08006078                adc_init
+                0x08006080       0x3c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_ADC_adc.c.o
+                0x08006080                adc_init
  .text.HAL_ADC_MspInit
-                0x080060b4       0x5c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_ADC_adc.c.o
-                0x080060b4                HAL_ADC_MspInit
+                0x080060bc       0x5c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_ADC_adc.c.o
+                0x080060bc                HAL_ADC_MspInit
  .text.adc_channel_set
-                0x08006110       0x14 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_ADC_adc.c.o
-                0x08006110                adc_channel_set
+                0x08006118       0x14 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_ADC_adc.c.o
+                0x08006118                adc_channel_set
  .text.adc_get_result
-                0x08006124       0x2c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_ADC_adc.c.o
-                0x08006124                adc_get_result
+                0x0800612c       0x2c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_ADC_adc.c.o
+                0x0800612c                adc_get_result
  .text.adc_get_result_average
-                0x08006150       0x32 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_ADC_adc.c.o
-                0x08006150                adc_get_result_average
- *fill*         0x08006182        0x2 
- .text.std      0x08006184       0x6c /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x08006158       0x32 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_ADC_adc.c.o
+                0x08006158                adc_get_result_average
+ *fill*         0x0800618a        0x2 
+ .text.std      0x0800618c       0x6c /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
  .text.stdio_exit_handler
-                0x080061f0       0x18 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x080061f8       0x18 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
  .text.cleanup_stdio
-                0x08006208       0x40 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x08006210       0x40 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
  .text.global_stdio_init.part.0
-                0x08006248       0x40 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x08006250       0x40 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
  .text.__sfp_lock_acquire
-                0x08006288        0xc /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
-                0x08006288                __sfp_lock_acquire
+                0x08006290        0xc /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x08006290                __sfp_lock_acquire
  .text.__sfp_lock_release
-                0x08006294        0xc /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
-                0x08006294                __sfp_lock_release
- .text.__sinit  0x080062a0       0x30 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
-                0x080062a0                __sinit
+                0x0800629c        0xc /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x0800629c                __sfp_lock_release
+ .text.__sinit  0x080062a8       0x30 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x080062a8                __sinit
  .text._fwalk_sglue
-                0x080062d0       0x3a /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
-                0x080062d0                _fwalk_sglue
- *fill*         0x0800630a        0x2 
- .text.printf   0x0800630c       0x24 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-printf.o)
-                0x0800630c                printf
-                0x0800630c                iprintf
- .text.memset   0x08006330       0x10 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
-                0x08006330                memset
- .text.__errno  0x08006340        0xc /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o)
-                0x08006340                __errno
+                0x080062d8       0x3a /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fwalk.o)
+                0x080062d8                _fwalk_sglue
+ *fill*         0x08006312        0x2 
+ .text.printf   0x08006314       0x24 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-printf.o)
+                0x08006314                printf
+                0x08006314                iprintf
+ .text.memset   0x08006338       0x10 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+                0x08006338                memset
+ .text.__errno  0x08006348        0xc /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o)
+                0x08006348                __errno
  .text.__libc_init_array
-                0x0800634c       0x48 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
-                0x0800634c                __libc_init_array
+                0x08006354       0x48 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+                0x08006354                __libc_init_array
  .text.__retarget_lock_init_recursive
-                0x08006394        0x2 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
-                0x08006394                __retarget_lock_init_recursive
+                0x0800639c        0x2 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
+                0x0800639c                __retarget_lock_init_recursive
  .text.__retarget_lock_acquire_recursive
-                0x08006396        0x2 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
-                0x08006396                __retarget_lock_acquire_recursive
+                0x0800639e        0x2 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
+                0x0800639e                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x08006398        0x2 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
-                0x08006398                __retarget_lock_release_recursive
- *fill*         0x0800639a        0x2 
+                0x080063a0        0x2 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
+                0x080063a0                __retarget_lock_release_recursive
+ *fill*         0x080063a2        0x2 
  .text.sbrk_aligned
-                0x0800639c       0x44 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+                0x080063a4       0x44 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
  .text._malloc_r
-                0x080063e0       0xf8 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
-                0x080063e0                _malloc_r
+                0x080063e8       0xf8 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+                0x080063e8                _malloc_r
  .text.__sfputc_r
-                0x080064d8       0x2a /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf.o)
+                0x080064e0       0x2a /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf.o)
  .text.__sfputs_r
-                0x08006502       0x24 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf.o)
-                0x08006502                __sfputs_r
- *fill*         0x08006526        0x2 
+                0x0800650a       0x24 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf.o)
+                0x0800650a                __sfputs_r
+ *fill*         0x0800652e        0x2 
  .text._vfprintf_r
-                0x08006528      0x228 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf.o)
-                0x08006528                _vfiprintf_r
-                0x08006528                _vfprintf_r
+                0x08006530      0x228 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf.o)
+                0x08006530                _vfiprintf_r
+                0x08006530                _vfprintf_r
  .text._printf_common
-                0x08006750       0xea /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x08006750                _printf_common
- *fill*         0x0800683a        0x2 
+                0x08006758       0xea /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x08006758                _printf_common
+ *fill*         0x08006842        0x2 
  .text._printf_i
-                0x0800683c      0x254 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x0800683c                _printf_i
+                0x08006844      0x254 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x08006844                _printf_i
  .text.__malloc_lock
-                0x08006a90        0xc /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
-                0x08006a90                __malloc_lock
+                0x08006a98        0xc /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
+                0x08006a98                __malloc_lock
  .text.__malloc_unlock
-                0x08006a9c        0xc /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
-                0x08006a9c                __malloc_unlock
- .text.__sread  0x08006aa8       0x22 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
-                0x08006aa8                __sread
+                0x08006aa4        0xc /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
+                0x08006aa4                __malloc_unlock
+ .text.__sread  0x08006ab0       0x22 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
+                0x08006ab0                __sread
  .text.__swrite
-                0x08006aca       0x38 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
-                0x08006aca                __swrite
- .text.__sseek  0x08006b02       0x26 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
-                0x08006b02                __sseek
+                0x08006ad2       0x38 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
+                0x08006ad2                __swrite
+ .text.__sseek  0x08006b0a       0x26 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
+                0x08006b0a                __sseek
  .text.__sclose
-                0x08006b28        0x8 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
-                0x08006b28                __sclose
+                0x08006b30        0x8 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-stdio.o)
+                0x08006b30                __sclose
  .text.__sflush_r
-                0x08006b30      0x100 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
-                0x08006b30                __sflush_r
+                0x08006b38      0x100 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
+                0x08006b38                __sflush_r
  .text._fflush_r
-                0x08006c30       0x50 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
-                0x08006c30                _fflush_r
+                0x08006c38       0x50 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fflush.o)
+                0x08006c38                _fflush_r
  .text.__swbuf_r
-                0x08006c80       0x7a /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-wbuf.o)
-                0x08006c80                __swbuf_r
- *fill*         0x08006cfa        0x2 
+                0x08006c88       0x7a /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-wbuf.o)
+                0x08006c88                __swbuf_r
+ *fill*         0x08006d02        0x2 
  .text.__swsetup_r
-                0x08006cfc       0xa8 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-wsetup.o)
-                0x08006cfc                __swsetup_r
+                0x08006d04       0xa8 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-wsetup.o)
+                0x08006d04                __swsetup_r
  .text.__swhatbuf_r
-                0x08006da4       0x48 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-makebuf.o)
-                0x08006da4                __swhatbuf_r
+                0x08006dac       0x48 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-makebuf.o)
+                0x08006dac                __swhatbuf_r
  .text.__smakebuf_r
-                0x08006dec       0x72 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-makebuf.o)
-                0x08006dec                __smakebuf_r
- *fill*         0x08006e5e        0x2 
+                0x08006df4       0x72 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-makebuf.o)
+                0x08006df4                __smakebuf_r
+ *fill*         0x08006e66        0x2 
  .text._isatty_r
-                0x08006e60       0x20 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-isattyr.o)
-                0x08006e60                _isatty_r
+                0x08006e68       0x20 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-isattyr.o)
+                0x08006e68                _isatty_r
  .text._lseek_r
-                0x08006e80       0x24 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
-                0x08006e80                _lseek_r
- .text._read_r  0x08006ea4       0x24 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
-                0x08006ea4                _read_r
- .text._sbrk_r  0x08006ec8       0x20 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
-                0x08006ec8                _sbrk_r
+                0x08006e88       0x24 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lseekr.o)
+                0x08006e88                _lseek_r
+ .text._read_r  0x08006eac       0x24 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-readr.o)
+                0x08006eac                _read_r
+ .text._sbrk_r  0x08006ed0       0x20 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
+                0x08006ed0                _sbrk_r
  .text._write_r
-                0x08006ee8       0x24 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
-                0x08006ee8                _write_r
+                0x08006ef0       0x24 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-writer.o)
+                0x08006ef0                _write_r
  .text._close_r
-                0x08006f0c       0x20 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
-                0x08006f0c                _close_r
+                0x08006f14       0x20 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-closer.o)
+                0x08006f14                _close_r
  .text._fstat_r
-                0x08006f2c       0x24 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fstatr.o)
-                0x08006f2c                _fstat_r
- .text._free_r  0x08006f50       0x98 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
-                0x08006f50                _free_r
+                0x08006f34       0x24 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-fstatr.o)
+                0x08006f34                _fstat_r
+ .text._free_r  0x08006f58       0x98 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
+                0x08006f58                _free_r
  .text.__udivmoddi4
-                0x08006fe8      0x320 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
-                0x08006fe8                __udivmoddi4
+                0x08006ff0      0x320 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x08006ff0                __udivmoddi4
  *(.glue_7)
- .glue_7        0x08007308        0x0 linker stubs
+ .glue_7        0x08007310        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08007308        0x0 linker stubs
+ .glue_7t       0x08007310        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x08007308        0x0 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x08007310        0x0 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x08007308        0x4 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crti.o
-                0x08007308                _init
- .init          0x0800730c        0x8 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x08007310        0x4 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crti.o
+                0x08007310                _init
+ .init          0x08007314        0x8 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x08007314        0x4 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crti.o
-                0x08007314                _fini
- .fini          0x08007318        0x8 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtn.o
-                0x08007320                        . = ALIGN (0x4)
-                0x08007320                        _etext = .
+ .fini          0x0800731c        0x4 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crti.o
+                0x0800731c                _fini
+ .fini          0x08007320        0x8 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtn.o
+                0x08007328                        . = ALIGN (0x4)
+                0x08007328                        _etext = .
 
-.vfp11_veneer   0x08007320        0x0
- .vfp11_veneer  0x08007320        0x0 linker stubs
+.vfp11_veneer   0x08007328        0x0
+ .vfp11_veneer  0x08007328        0x0 linker stubs
 
-.v4_bx          0x08007320        0x0
- .v4_bx         0x08007320        0x0 linker stubs
+.v4_bx          0x08007328        0x0
+ .v4_bx         0x08007328        0x0 linker stubs
 
-.iplt           0x08007320        0x0
- .iplt          0x08007320        0x0 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x08007328        0x0
+ .iplt          0x08007328        0x0 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x08007320     0x3020
-                0x08007320                        . = ALIGN (0x4)
+.rodata         0x08007328     0x301c
+                0x08007328                        . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
  .rodata.main.str1.4
-                0x08007320       0x54 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_main.c.o
-                                 0x48 (size before relaxing)
+                0x08007328       0x50 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_main.c.o
+                                 0x44 (size before relaxing)
  .rodata.APBPrescTable
-                0x08007374        0x8 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_CMSIS_Device_ST_STM32F4xx_Source_Templates_system_stm32f4xx.c.o
-                0x08007374                APBPrescTable
+                0x08007378        0x8 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_CMSIS_Device_ST_STM32F4xx_Source_Templates_system_stm32f4xx.c.o
+                0x08007378                APBPrescTable
  .rodata.AHBPrescTable
-                0x0800737c       0x10 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_CMSIS_Device_ST_STM32F4xx_Source_Templates_system_stm32f4xx.c.o
-                0x0800737c                AHBPrescTable
+                0x08007380       0x10 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_CMSIS_Device_ST_STM32F4xx_Source_Templates_system_stm32f4xx.c.o
+                0x08007380                AHBPrescTable
  .rodata.lcd_init.str1.4
-                0x0800738c        0x0 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x08007390        0x0 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
                                   0xc (size before relaxing)
  .rodata.asc2_3216
-                0x0800738c     0x17c0 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x0800738c                asc2_3216
+                0x08007390     0x17c0 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x08007390                asc2_3216
  .rodata.asc2_2412
-                0x08008b4c      0xd5c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x08008b4c                asc2_2412
+                0x08008b50      0xd5c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x08008b50                asc2_2412
  .rodata.asc2_1608
-                0x080098a8      0x5f0 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x080098a8                asc2_1608
+                0x080098ac      0x5f0 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x080098ac                asc2_1608
  .rodata.asc2_1206
-                0x08009e98      0x474 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
-                0x08009e98                asc2_1206
+                0x08009e9c      0x474 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+                0x08009e9c                asc2_1206
  .rodata._vfprintf_r.str1.1
-                0x0800a30c       0x33 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf.o)
+                0x0800a310       0x33 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf.o)
                                  0x11 (size before relaxing)
  .rodata._printf_i.str1.1
-                0x0800a33f        0x0 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x0800a343        0x0 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-nano-vfprintf_i.o)
                                  0x22 (size before relaxing)
-                0x0800a340                        . = ALIGN (0x4)
- *fill*         0x0800a33f        0x1 
+                0x0800a344                        . = ALIGN (0x4)
+ *fill*         0x0800a343        0x1 
 
-.ARM.extab      0x0800a340        0x0
-                0x0800a340                        . = ALIGN (0x4)
+.ARM.extab      0x0800a344        0x0
+                0x0800a344                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0800a340                        . = ALIGN (0x4)
+                0x0800a344                        . = ALIGN (0x4)
 
-.ARM            0x0800a340        0x8
-                0x0800a340                        . = ALIGN (0x4)
-                0x0800a340                        __exidx_start = .
+.ARM            0x0800a344        0x8
+                0x0800a344                        . = ALIGN (0x4)
+                0x0800a344                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x0800a340        0x8 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memchr.o)
+ .ARM.exidx     0x0800a344        0x8 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memchr.o)
  .ARM.exidx.text.__udivmoddi4
-                0x0800a348        0x0 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x0800a34c        0x0 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
                                   0x8 (size before relaxing)
-                0x0800a348                        __exidx_end = .
-                0x0800a348                        . = ALIGN (0x4)
+                0x0800a34c                        __exidx_end = .
+                0x0800a34c                        . = ALIGN (0x4)
 
-.rel.dyn        0x0800a348        0x0
- .rel.iplt      0x0800a348        0x0 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x0800a34c        0x0
+ .rel.iplt      0x0800a34c        0x0 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.preinit_array  0x0800a348        0x0
-                0x0800a348                        . = ALIGN (0x4)
-                0x0800a348                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0800a34c        0x0
+                0x0800a34c                        . = ALIGN (0x4)
+                0x0800a34c                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0800a348                        PROVIDE (__preinit_array_end = .)
-                0x0800a348                        . = ALIGN (0x4)
+                0x0800a34c                        PROVIDE (__preinit_array_end = .)
+                0x0800a34c                        . = ALIGN (0x4)
 
-.init_array     0x0800a348        0x4
-                0x0800a348                        . = ALIGN (0x4)
-                0x0800a348                        PROVIDE (__init_array_start = .)
+.init_array     0x0800a34c        0x4
+                0x0800a34c                        . = ALIGN (0x4)
+                0x0800a34c                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x0800a348        0x4 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x0800a34c                        PROVIDE (__init_array_end = .)
-                0x0800a34c                        . = ALIGN (0x4)
+ .init_array    0x0800a34c        0x4 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x0800a350                        PROVIDE (__init_array_end = .)
+                0x0800a350                        . = ALIGN (0x4)
 
-.fini_array     0x0800a34c        0x4
-                0x0800a34c                        . = ALIGN (0x4)
+.fini_array     0x0800a350        0x4
+                0x0800a350                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0800a34c        0x4 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x0800a350        0x4 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x0800a350                        . = ALIGN (0x4)
-                0x0800a350                        _sidata = LOADADDR (.data)
+                0x0800a354                        . = ALIGN (0x4)
+                0x0800a354                        _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x6c load address 0x0800a350
+.data           0x20000000       0x6c load address 0x0800a354
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -1743,16 +1743,16 @@ LOAD /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm
                 0x2000006c                        _edata = .
 
 .tm_clone_table
-                0x2000006c        0x0 load address 0x0800a3bc
+                0x2000006c        0x0 load address 0x0800a3c0
  .tm_clone_table
                 0x2000006c        0x0 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  .tm_clone_table
                 0x2000006c        0x0 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtend.o
 
-.igot.plt       0x2000006c        0x0 load address 0x0800a3bc
+.igot.plt       0x2000006c        0x0 load address 0x0800a3c0
  .igot.plt      0x2000006c        0x0 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.bss            0x2000006c      0x32c load address 0x0800a3bc
+.bss            0x2000006c      0x32c load address 0x0800a3c0
                 0x2000006c                        . = ALIGN (0x4)
                 0x2000006c                        _sbss = .
                 0x2000006c                        __bss_start__ = _sbss
@@ -1815,7 +1815,7 @@ LOAD /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm
                 0x20000398                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x20000398      0x600 load address 0x0800a3bc
+                0x20000398      0x600 load address 0x0800a3c0
                 0x20000398                        . = ALIGN (0x8)
                 0x20000398                        PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
@@ -2012,27 +2012,27 @@ LOAD /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm
                 0x0000023e        0x0 /Users/banner/Work/K3PT/.tools/arm-gnu-toolchain-15.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
                                  0xd6 (size before relaxing)
 
-.debug_info     0x00000000    0x17fa8
+.debug_info     0x00000000    0x17fa9
  .debug_info    0x00000000       0x30 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Projects_GCC_startup_stm32f407xx.s.o
- .debug_info    0x00000030      0x5c0 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_main.c.o
- .debug_info    0x000005f0      0x11c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_stm32f4xx_it.c.o
- .debug_info    0x0000070c      0x533 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_syscalls.c.o
- .debug_info    0x00000c3f      0x527 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_CMSIS_Device_ST_STM32F4xx_Source_Templates_system_stm32f4xx.c.o
- .debug_info    0x00001166      0x233 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_delay_delay.c.o
- .debug_info    0x00001399      0x8ec /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_sys_sys.c.o
- .debug_info    0x00001c85      0xcf6 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_usart_usart.c.o
- .debug_info    0x0000297b      0x9e1 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal.c.o
- .debug_info    0x0000335c      0xf8a /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_cortex.c.o
- .debug_info    0x000042e6      0xb2c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_dma.c.o
- .debug_info    0x00004e12      0x704 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_gpio.c.o
- .debug_info    0x00005516      0xa8d /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_rcc.c.o
- .debug_info    0x00005fa3     0x1c9b /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
- .debug_info    0x00007c3e      0xcef /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_sram.c.o
- .debug_info    0x0000892d      0xa4d /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_ll_fsmc.c.o
- .debug_info    0x0000937a      0xe6f /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_adc.c.o
- .debug_info    0x0000a1e9      0x441 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LED_led.c.o
- .debug_info    0x0000a62a     0xcde9 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
- .debug_info    0x00017413      0xb95 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_ADC_adc.c.o
+ .debug_info    0x00000030      0x5c1 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_main.c.o
+ .debug_info    0x000005f1      0x11c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_stm32f4xx_it.c.o
+ .debug_info    0x0000070d      0x533 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/User_syscalls.c.o
+ .debug_info    0x00000c40      0x527 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_CMSIS_Device_ST_STM32F4xx_Source_Templates_system_stm32f4xx.c.o
+ .debug_info    0x00001167      0x233 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_delay_delay.c.o
+ .debug_info    0x0000139a      0x8ec /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_sys_sys.c.o
+ .debug_info    0x00001c86      0xcf6 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_SYSTEM_usart_usart.c.o
+ .debug_info    0x0000297c      0x9e1 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal.c.o
+ .debug_info    0x0000335d      0xf8a /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_cortex.c.o
+ .debug_info    0x000042e7      0xb2c /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_dma.c.o
+ .debug_info    0x00004e13      0x704 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_gpio.c.o
+ .debug_info    0x00005517      0xa8d /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_rcc.c.o
+ .debug_info    0x00005fa4     0x1c9b /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_uart.c.o
+ .debug_info    0x00007c3f      0xcef /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_sram.c.o
+ .debug_info    0x0000892e      0xa4d /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_ll_fsmc.c.o
+ .debug_info    0x0000937b      0xe6f /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_STM32F4xx_HAL_Driver_Src_stm32f4xx_hal_adc.c.o
+ .debug_info    0x0000a1ea      0x441 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LED_led.c.o
+ .debug_info    0x0000a62b     0xcde9 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_LCD_lcd.c.o
+ .debug_info    0x00017414      0xb95 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Drivers_BSP_ADC_adc.c.o
 
 .debug_abbrev   0x00000000     0x2a2b
  .debug_abbrev  0x00000000       0x24 /Users/banner/Work/ST/git/ADC_TEST/Output/obj/Projects_GCC_startup_stm32f407xx.s.o

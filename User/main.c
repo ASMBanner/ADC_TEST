@@ -41,7 +41,7 @@ int main(void)
 
     lcd_show_string(30, 50, 200, 16, 16, "STM32", RED);
     lcd_show_string(30, 70, 200, 16, 16, "ADC TEST", RED);
-    lcd_show_string(30, 90, 200, 16, 16, "ATOM@ALIENTEK", RED);
+    lcd_show_string(30, 90, 200, 16, 16, "ASM@BANNER", CYAN);
     lcd_show_string(30, 110, 200, 16, 16, "ADC1_CH5_VAL:", BLUE);
     lcd_show_string(30, 130, 200, 16, 16, "ADC1_CH5_VOL:0.000V", BLUE); /* 先在固定位置显示小数点 */
 
