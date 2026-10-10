@@ -1,19 +1,19 @@
 /**
  ****************************************************************************************************
  * @file        main.c
- * @author      ����ԭ���Ŷ�(ALIENTEK)
+ * @author      正点原子团队(ALIENTEK)
  * @version     V1.0
  * @date        2021-10-18
- * @brief       ��ͨ��ADC�ɼ� ʵ��
- * @license     Copyright (c) 2020-2032, �������������ӿƼ����޹�˾
+ * @brief       单通道ADC采集 实验
+ * @license     Copyright (c) 2020-2032, 广州市星翼电子科技有限公司
  ****************************************************************************************************
  * @attention
  *
- * ʵ��ƽ̨:����ԭ�� ̽���� F407������
- * ������Ƶ:www.yuanzige.com
- * ������̳:www.openedv.com
- * ��˾��ַ:www.alientek.com
- * �����ַ:openedv.taobao.com
+ * 实验平台:正点原子 探索者 F407开发板
+ * 在线视频:www.yuanzige.com
+ * 技术论坛:www.openedv.com
+ * 公司网址:www.alientek.com
+ * 购买地址:openedv.taobao.com
  *
  ****************************************************************************************************
  */
@@ -31,32 +31,32 @@ int main(void)
     uint16_t adcx;
     float temp;
 
-    HAL_Init();                             /* ��ʼ��HAL�� */
-    sys_stm32_clock_init(336, 8, 2, 7);     /* ����ʱ��,168Mhz */
-    delay_init(168);                        /* ��ʱ��ʼ�� */
-    usart_init(115200);                     /* ���ڳ�ʼ��Ϊ115200 */
-    led_init();                             /* ��ʼ��LED */
-    lcd_init();                             /* ��ʼ��LCD */
-    adc_init();                             /* ��ʼ��ADC */
+    HAL_Init();                             /* 初始化HAL库 */
+    sys_stm32_clock_init(336, 8, 2, 7);     /* 设置时钟,168Mhz */
+    delay_init(168);                        /* 延时初始化 */
+    usart_init(115200);                     /* 串口初始化为115200 */
+    led_init();                             /* 初始化LED */
+    lcd_init();                             /* 初始化LCD */
+    adc_init();                             /* 初始化ADC */
 
     lcd_show_string(30, 50, 200, 16, 16, "STM32", RED);
     lcd_show_string(30, 70, 200, 16, 16, "ADC TEST", RED);
     lcd_show_string(30, 90, 200, 16, 16, "ATOM@ALIENTEK", RED);
     lcd_show_string(30, 110, 200, 16, 16, "ADC1_CH5_VAL:", BLUE);
-    lcd_show_string(30, 130, 200, 16, 16, "ADC1_CH5_VOL:0.000V", BLUE); /* ���ڹ̶�λ����ʾС���� */
+    lcd_show_string(30, 130, 200, 16, 16, "ADC1_CH5_VOL:0.000V", BLUE); /* 先在固定位置显示小数点 */
 
     while (1)
     {
-        adcx = adc_get_result_average(ADC_ADCX_CHY, 10);    /* ��ȡͨ��5��ת��ֵ��10��ȡƽ�� */
-        lcd_show_xnum(134, 110, adcx, 5, 16, 0, BLUE);      /* ��ʾADC�������ԭʼֵ */
+        adcx = adc_get_result_average(ADC_ADCX_CHY, 10);    /* 获取通道5的转换值，10次取平均 */
+        lcd_show_xnum(134, 110, adcx, 5, 16, 0, BLUE);      /* 显示ADC采样后的原始值 */
  
-        temp = (float)adcx * (3.3 / 4096);                  /* ��ȡ�����Ĵ�С����ʵ�ʵ�ѹֵ������3.1111 */
-        adcx = temp;                                        /* ��ֵ�������ָ�adcx��������ΪadcxΪu16���� */
-        lcd_show_xnum(134, 130, adcx, 1, 16, 0, BLUE);      /* ��ʾ��ѹֵ���������֣�3.1111�Ļ������������ʾ3 */
+        temp = (float)adcx * (3.3 / 4096);                  /* 获取计算后的带小数的实际电压值，比如3.1111 */
+        adcx = temp;                                        /* 赋值整数部分给adcx变量，因为adcx为u16整形 */
+        lcd_show_xnum(134, 130, adcx, 1, 16, 0, BLUE);      /* 显示电压值的整数部分，3.1111的话，这里就是显示3 */
 
-        temp -= adcx;                                       /* ���Ѿ���ʾ����������ȥ��������С�����֣�����3.1111-3=0.1111 */
-        temp *= 1000;                                       /* С�����ֳ���1000�����磺0.1111��ת��Ϊ111.1���൱�ڱ�����λС���� */
-        lcd_show_xnum(150, 130, temp, 3, 16, 0X80, BLUE);   /* ��ʾС�����֣�ǰ��ת��Ϊ��������ʾ����������ʾ�ľ���111. */
+        temp -= adcx;                                       /* 把已经显示的整数部分去掉，留下小数部分，比如3.1111-3=0.1111 */
+        temp *= 1000;                                       /* 小数部分乘以1000，例如：0.1111就转换为111.1，相当于保留三位小数。 */
+        lcd_show_xnum(150, 130, temp, 3, 16, 0X80, BLUE);   /* 显示小数部分（前面转换为了整形显示），这里显示的就是111. */
 
         LED0_TOGGLE();
         delay_ms(100);

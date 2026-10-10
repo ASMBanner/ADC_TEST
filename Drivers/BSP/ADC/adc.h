@@ -1,23 +1,23 @@
 /**
  ****************************************************************************************************
  * @file        adc.h
- * @author      ÕıµãÔ­×ÓÍÅ¶Ó(ALIENTEK)
+ * @author      æ­£ç‚¹åŸå­å›¢é˜Ÿ(ALIENTEK)
  * @version     V1.0
  * @date        2021-10-18
- * @brief       ADC Çı¶¯´úÂë
- * @license     Copyright (c) 2020-2032, ¹ãÖİÊĞĞÇÒíµç×Ó¿Æ¼¼ÓĞÏŞ¹«Ë¾
+ * @brief       ADC é©±åŠ¨ä»£ç 
+ * @license     Copyright (c) 2020-2032, å¹¿å·å¸‚æ˜Ÿç¿¼ç”µå­ç§‘æŠ€æœ‰é™å…¬å¸
  ****************************************************************************************************
  * @attention
  *
- * ÊµÑéÆ½Ì¨:ÕıµãÔ­×Ó Ì½Ë÷Õß F407¿ª·¢°å
- * ÔÚÏßÊÓÆµ:www.yuanzige.com
- * ¼¼ÊõÂÛÌ³:www.openedv.com
- * ¹«Ë¾ÍøÖ·:www.alientek.com
- * ¹ºÂòµØÖ·:openedv.taobao.com
+ * å®éªŒå¹³å°:æ­£ç‚¹åŸå­ æ¢ç´¢è€… F407å¼€å‘æ¿
+ * åœ¨çº¿è§†é¢‘:www.yuanzige.com
+ * æŠ€æœ¯è®ºå›:www.openedv.com
+ * å…¬å¸ç½‘å€:www.alientek.com
+ * è´­ä¹°åœ°å€:openedv.taobao.com
  *
- * ĞŞ¸ÄËµÃ÷
+ * ä¿®æ”¹è¯´æ˜
  * V1.0 20211018
- * µÚÒ»´Î·¢²¼
+ * ç¬¬ä¸€æ¬¡å‘å¸ƒ
  *
  ****************************************************************************************************
  */
@@ -29,22 +29,22 @@
 
 
 /******************************************************************************************/
-/* ADC¼°Òı½Å ¶¨Òå */
+/* ADCåŠå¼•è„š å®šä¹‰ */
 
 #define ADC_ADCX_CHY_GPIO_PORT              GPIOA
 #define ADC_ADCX_CHY_GPIO_PIN               GPIO_PIN_5
-#define ADC_ADCX_CHY_GPIO_CLK_ENABLE()      do{ __HAL_RCC_GPIOA_CLK_ENABLE(); }while(0)         /* PA¿ÚÊ±ÖÓÊ¹ÄÜ */
+#define ADC_ADCX_CHY_GPIO_CLK_ENABLE()      do{ __HAL_RCC_GPIOA_CLK_ENABLE(); }while(0)         /* PAå£æ—¶é’Ÿä½¿èƒ½ */
 
 #define ADC_ADCX                            ADC1 
-#define ADC_ADCX_CHY                        ADC_CHANNEL_5                                       /* Í¨µÀY,  0 <= Y <= 17 */ 
-#define ADC_ADCX_CHY_CLK_ENABLE()           do{ __HAL_RCC_ADC1_CLK_ENABLE(); }while(0)          /* ADC1 Ê±ÖÓÊ¹ÄÜ */
+#define ADC_ADCX_CHY                        ADC_CHANNEL_5                                       /* é€šé“Y,  0 <= Y <= 17 */ 
+#define ADC_ADCX_CHY_CLK_ENABLE()           do{ __HAL_RCC_ADC1_CLK_ENABLE(); }while(0)          /* ADC1 æ—¶é’Ÿä½¿èƒ½ */
 
 /******************************************************************************************/
 
-void adc_init(void);                                            /* ADC³õÊ¼»¯ */
-void adc_channel_set(ADC_HandleTypeDef *adc_handle, uint32_t ch, uint32_t rank, uint32_t stime); /* ADCÍ¨µÀÉèÖÃ */
-uint32_t adc_get_result(uint32_t ch);                           /* »ñµÃÄ³¸öÍ¨µÀÖµ */
-uint32_t adc_get_result_average(uint32_t ch, uint8_t times);    /* µÃµ½Ä³¸öÍ¨µÀ¸ø¶¨´ÎÊı²ÉÑùµÄÆ½¾ùÖµ */
+void adc_init(void);                                            /* ADCåˆå§‹åŒ– */
+void adc_channel_set(ADC_HandleTypeDef *adc_handle, uint32_t ch, uint32_t rank, uint32_t stime); /* ADCé€šé“è®¾ç½® */
+uint32_t adc_get_result(uint32_t ch);                           /* è·å¾—æŸä¸ªé€šé“å€¼ */
+uint32_t adc_get_result_average(uint32_t ch, uint8_t times);    /* å¾—åˆ°æŸä¸ªé€šé“ç»™å®šæ¬¡æ•°é‡‡æ ·çš„å¹³å‡å€¼ */
 
 #endif
 

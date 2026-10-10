@@ -1,23 +1,23 @@
 /**
  ****************************************************************************************************
  * @file        adc.c
- * @author      ÕıµãÔ­×ÓÍÅ¶Ó(ALIENTEK)
+ * @author      æ­£ç‚¹åŸå­å›¢é˜Ÿ(ALIENTEK)
  * @version     V1.0
  * @date        2021-10-18
- * @brief       ADC Çı¶¯´úÂë
- * @license     Copyright (c) 2020-2032, ¹ãÖİÊĞĞÇÒíµç×Ó¿Æ¼¼ÓĞÏŞ¹«Ë¾
+ * @brief       ADC é©±åŠ¨ä»£ç 
+ * @license     Copyright (c) 2020-2032, å¹¿å·å¸‚æ˜Ÿç¿¼ç”µå­ç§‘æŠ€æœ‰é™å…¬å¸
  ****************************************************************************************************
  * @attention
  *
- * ÊµÑéÆ½Ì¨:ÕıµãÔ­×Ó Ì½Ë÷Õß F407¿ª·¢°å
- * ÔÚÏßÊÓÆµ:www.yuanzige.com
- * ¼¼ÊõÂÛÌ³:www.openedv.com
- * ¹«Ë¾ÍøÖ·:www.alientek.com
- * ¹ºÂòµØÖ·:openedv.taobao.com
+ * å®éªŒå¹³å°:æ­£ç‚¹åŸå­ æ¢ç´¢è€… F407å¼€å‘æ¿
+ * åœ¨çº¿è§†é¢‘:www.yuanzige.com
+ * æŠ€æœ¯è®ºå›:www.openedv.com
+ * å…¬å¸ç½‘å€:www.alientek.com
+ * è´­ä¹°åœ°å€:openedv.taobao.com
  *
- * ĞŞ¸ÄËµÃ÷
+ * ä¿®æ”¹è¯´æ˜
  * V1.0 20211018
- * µÚÒ»´Î·¢²¼
+ * ç¬¬ä¸€æ¬¡å‘å¸ƒ
  *
  ****************************************************************************************************
  */
@@ -26,48 +26,48 @@
 #include "./SYSTEM/delay/delay.h"
 
 
-ADC_HandleTypeDef g_adc_handle;   /* ADC¾ä±ú */
+ADC_HandleTypeDef g_adc_handle;   /* ADCå¥æŸ„ */
 
 /**
- * @brief       ADC³õÊ¼»¯º¯Êı
- *   @note      ±¾º¯ÊıÖ§³ÖADC1/ADC2ÈÎÒâÍ¨µÀ, µ«ÊÇ²»Ö§³ÖADC3
- *              ÎÒÃÇÊ¹ÓÃ12Î»¾«¶È, ADC²ÉÑùÊ±ÖÓ=21M, ×ª»»Ê±¼äÎª: ²ÉÑùÖÜÆÚ + 12¸öADCÖÜÆÚ
- *              ÉèÖÃ×î´ó²ÉÑùÖÜÆÚ: 480, Ôò×ª»»Ê±¼ä = 492 ¸öADCÖÜÆÚ = 23.42us
- * @param       ÎŞ
- * @retval      ÎŞ
+ * @brief       ADCåˆå§‹åŒ–å‡½æ•°
+ *   @note      æœ¬å‡½æ•°æ”¯æŒADC1/ADC2ä»»æ„é€šé“, ä½†æ˜¯ä¸æ”¯æŒADC3
+ *              æˆ‘ä»¬ä½¿ç”¨12ä½ç²¾åº¦, ADCé‡‡æ ·æ—¶é’Ÿ=21M, è½¬æ¢æ—¶é—´ä¸º: é‡‡æ ·å‘¨æœŸ + 12ä¸ªADCå‘¨æœŸ
+ *              è®¾ç½®æœ€å¤§é‡‡æ ·å‘¨æœŸ: 480, åˆ™è½¬æ¢æ—¶é—´ = 492 ä¸ªADCå‘¨æœŸ = 23.42us
+ * @param       æ— 
+ * @retval      æ— 
  */
 void adc_init(void)
 {
     g_adc_handle.Instance = ADC_ADCX;
-    g_adc_handle.Init.ClockPrescaler = ADC_CLOCKPRESCALER_PCLK_DIV4;        /* 4·ÖÆµ£¬ADCCLK = PCLK2/4 = 84/4 = 21Mhz */
-    g_adc_handle.Init.Resolution = ADC_RESOLUTION_12B;                      /* 12Î»Ä£Ê½ */
-    g_adc_handle.Init.DataAlign = ADC_DATAALIGN_RIGHT;                      /* ÓÒ¶ÔÆë */
-    g_adc_handle.Init.ScanConvMode = DISABLE;                               /* ·ÇÉ¨ÃèÄ£Ê½ */
-    g_adc_handle.Init.ContinuousConvMode = DISABLE;                         /* ¹Ø±ÕÁ¬Ğø×ª»» */
-    g_adc_handle.Init.NbrOfConversion = 1;                                  /* 1¸ö×ª»»ÔÚ¹æÔòĞòÁĞÖĞ Ò²¾ÍÊÇÖ»×ª»»¹æÔòĞòÁĞ1 */
-    g_adc_handle.Init.DiscontinuousConvMode = DISABLE;                      /* ½ûÖ¹²»Á¬Ğø²ÉÑùÄ£Ê½ */
-    g_adc_handle.Init.NbrOfDiscConversion = 0;                              /* ²»Á¬Ğø²ÉÑùÍ¨µÀÊıÎª0 */
-    g_adc_handle.Init.ExternalTrigConv = ADC_SOFTWARE_START;                /* Èí¼ş´¥·¢ */
-    g_adc_handle.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE; /* Ê¹ÓÃÈí¼ş´¥·¢ */
-    g_adc_handle.Init.DMAContinuousRequests = DISABLE;                      /* ¹Ø±ÕDMAÇëÇó */
-    HAL_ADC_Init(&g_adc_handle);                                            /* ³õÊ¼»¯ */
+    g_adc_handle.Init.ClockPrescaler = ADC_CLOCKPRESCALER_PCLK_DIV4;        /* 4åˆ†é¢‘ï¼ŒADCCLK = PCLK2/4 = 84/4 = 21Mhz */
+    g_adc_handle.Init.Resolution = ADC_RESOLUTION_12B;                      /* 12ä½æ¨¡å¼ */
+    g_adc_handle.Init.DataAlign = ADC_DATAALIGN_RIGHT;                      /* å³å¯¹é½ */
+    g_adc_handle.Init.ScanConvMode = DISABLE;                               /* éæ‰«ææ¨¡å¼ */
+    g_adc_handle.Init.ContinuousConvMode = DISABLE;                         /* å…³é—­è¿ç»­è½¬æ¢ */
+    g_adc_handle.Init.NbrOfConversion = 1;                                  /* 1ä¸ªè½¬æ¢åœ¨è§„åˆ™åºåˆ—ä¸­ ä¹Ÿå°±æ˜¯åªè½¬æ¢è§„åˆ™åºåˆ—1 */
+    g_adc_handle.Init.DiscontinuousConvMode = DISABLE;                      /* ç¦æ­¢ä¸è¿ç»­é‡‡æ ·æ¨¡å¼ */
+    g_adc_handle.Init.NbrOfDiscConversion = 0;                              /* ä¸è¿ç»­é‡‡æ ·é€šé“æ•°ä¸º0 */
+    g_adc_handle.Init.ExternalTrigConv = ADC_SOFTWARE_START;                /* è½¯ä»¶è§¦å‘ */
+    g_adc_handle.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE; /* ä½¿ç”¨è½¯ä»¶è§¦å‘ */
+    g_adc_handle.Init.DMAContinuousRequests = DISABLE;                      /* å…³é—­DMAè¯·æ±‚ */
+    HAL_ADC_Init(&g_adc_handle);                                            /* åˆå§‹åŒ– */
 }
 
 /**
- * @brief       ADCµ×²ãÇı¶¯£¬Òı½ÅÅäÖÃ£¬Ê±ÖÓÊ¹ÄÜ
-                ´Ëº¯Êı»á±»HAL_ADC_Init()µ÷ÓÃ
- * @param       hadc:ADC¾ä±ú
- * @retval      ÎŞ
+ * @brief       ADCåº•å±‚é©±åŠ¨ï¼Œå¼•è„šé…ç½®ï¼Œæ—¶é’Ÿä½¿èƒ½
+                æ­¤å‡½æ•°ä¼šè¢«HAL_ADC_Init()è°ƒç”¨
+ * @param       hadc:ADCå¥æŸ„
+ * @retval      æ— 
  */
 void HAL_ADC_MspInit(ADC_HandleTypeDef *hadc)
 {
     if(hadc->Instance == ADC_ADCX)
     {
         GPIO_InitTypeDef gpio_init_struct;
-        ADC_ADCX_CHY_CLK_ENABLE();      /* Ê¹ÄÜADCxÊ±ÖÓ */
-        ADC_ADCX_CHY_GPIO_CLK_ENABLE(); /* ¿ªÆôGPIOÊ±ÖÓ */
+        ADC_ADCX_CHY_CLK_ENABLE();      /* ä½¿èƒ½ADCxæ—¶é’Ÿ */
+        ADC_ADCX_CHY_GPIO_CLK_ENABLE(); /* å¼€å¯GPIOæ—¶é’Ÿ */
 
-        /* AD²É¼¯Òı½ÅÄ£Ê½ÉèÖÃ,Ä£ÄâÊäÈë */
+        /* ADé‡‡é›†å¼•è„šæ¨¡å¼è®¾ç½®,æ¨¡æ‹Ÿè¾“å…¥ */
         gpio_init_struct.Pin = ADC_ADCX_CHY_GPIO_PIN;
         gpio_init_struct.Mode = GPIO_MODE_ANALOG;
         gpio_init_struct.Pull = GPIO_NOPULL;
@@ -76,63 +76,63 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef *hadc)
 }
 
 /**
- * @brief       ÉèÖÃADCÍ¨µÀ²ÉÑùÊ±¼ä
- * @param       adcx : adc¾ä±úÖ¸Õë,ADC_HandleTypeDef
- * @param       ch   : Í¨µÀºÅ, ADC_CHANNEL_0~ADC_CHANNEL_17
- * @param       stime: ²ÉÑùÊ±¼ä  0~7, ¶ÔÓ¦¹ØÏµÎª:
- *   @arg       ADC_SAMPLETIME_3CYCLES,  3¸öADCÊ±ÖÓÖÜÆÚ        ADC_SAMPLETIME_15CYCLES, 15¸öADCÊ±ÖÓÖÜÆÚ
- *   @arg       ADC_SAMPLETIME_28CYCLES, 28¸öADCÊ±ÖÓÖÜÆÚ       ADC_SAMPLETIME_56CYCLES, 56¸öADCÊ±ÖÓÖÜÆÚ
- *   @arg       ADC_SAMPLETIME_84CYCLES, 84¸öADCÊ±ÖÓÖÜÆÚ       ADC_SAMPLETIME_112CYCLES,112¸öADCÊ±ÖÓÖÜÆÚ
- *   @arg       ADC_SAMPLETIME_144CYCLES,144¸öADCÊ±ÖÓÖÜÆÚ      ADC_SAMPLETIME_480CYCLES,480¸öADCÊ±ÖÓÖÜÆÚ
- * @param       rank: ¶àÍ¨µÀ²É¼¯Ê±ĞèÒªÉèÖÃµÄ²É¼¯±àºÅ,
-                ¼ÙÉèÄã¶¨Òåchannel1µÄrank=1£¬channel2µÄrank=2£¬
-                ÄÇÃ´¶ÔÓ¦ÄãÔÚDMA»º´æ¿Õ¼äµÄ±äÁ¿Êı×éAdcDMA[0] ¾ÍiÊÇchannel1µÄ×ª»»½á¹û£¬AdcDMA[1]¾ÍÊÇÍ¨µÀ2µÄ×ª»»½á¹û¡£ 
-                µ¥Í¨µÀDMAÉèÖÃÎª ADC_REGULAR_RANK_1
- *   @arg       ±àºÅ1~16£ºADC_REGULAR_RANK_1~ADC_REGULAR_RANK_16
- * @retval      ÎŞ
+ * @brief       è®¾ç½®ADCé€šé“é‡‡æ ·æ—¶é—´
+ * @param       adcx : adcå¥æŸ„æŒ‡é’ˆ,ADC_HandleTypeDef
+ * @param       ch   : é€šé“å·, ADC_CHANNEL_0~ADC_CHANNEL_17
+ * @param       stime: é‡‡æ ·æ—¶é—´  0~7, å¯¹åº”å…³ç³»ä¸º:
+ *   @arg       ADC_SAMPLETIME_3CYCLES,  3ä¸ªADCæ—¶é’Ÿå‘¨æœŸ        ADC_SAMPLETIME_15CYCLES, 15ä¸ªADCæ—¶é’Ÿå‘¨æœŸ
+ *   @arg       ADC_SAMPLETIME_28CYCLES, 28ä¸ªADCæ—¶é’Ÿå‘¨æœŸ       ADC_SAMPLETIME_56CYCLES, 56ä¸ªADCæ—¶é’Ÿå‘¨æœŸ
+ *   @arg       ADC_SAMPLETIME_84CYCLES, 84ä¸ªADCæ—¶é’Ÿå‘¨æœŸ       ADC_SAMPLETIME_112CYCLES,112ä¸ªADCæ—¶é’Ÿå‘¨æœŸ
+ *   @arg       ADC_SAMPLETIME_144CYCLES,144ä¸ªADCæ—¶é’Ÿå‘¨æœŸ      ADC_SAMPLETIME_480CYCLES,480ä¸ªADCæ—¶é’Ÿå‘¨æœŸ
+ * @param       rank: å¤šé€šé“é‡‡é›†æ—¶éœ€è¦è®¾ç½®çš„é‡‡é›†ç¼–å·,
+                å‡è®¾ä½ å®šä¹‰channel1çš„rank=1ï¼Œchannel2çš„rank=2ï¼Œ
+                é‚£ä¹ˆå¯¹åº”ä½ åœ¨DMAç¼“å­˜ç©ºé—´çš„å˜é‡æ•°ç»„AdcDMA[0] å°±iæ˜¯channel1çš„è½¬æ¢ç»“æœï¼ŒAdcDMA[1]å°±æ˜¯é€šé“2çš„è½¬æ¢ç»“æœã€‚ 
+                å•é€šé“DMAè®¾ç½®ä¸º ADC_REGULAR_RANK_1
+ *   @arg       ç¼–å·1~16ï¼šADC_REGULAR_RANK_1~ADC_REGULAR_RANK_16
+ * @retval      æ— 
  */
 void adc_channel_set(ADC_HandleTypeDef *adc_handle, uint32_t ch, uint32_t rank, uint32_t stime)
 {
-    /* ÅäÖÃ¶ÔÓ¦ADCÍ¨µÀ */
+    /* é…ç½®å¯¹åº”ADCé€šé“ */
     ADC_ChannelConfTypeDef adc_channel;
-    adc_channel.Channel = ch;               /* ÉèÖÃADCX¶ÔÍ¨µÀch */
-    adc_channel.Rank = rank;                /* ÉèÖÃ²ÉÑùĞòÁĞ */
-    adc_channel.SamplingTime = stime;       /* ÉèÖÃ²ÉÑùÊ±¼ä */
+    adc_channel.Channel = ch;               /* è®¾ç½®ADCXå¯¹é€šé“ch */
+    adc_channel.Rank = rank;                /* è®¾ç½®é‡‡æ ·åºåˆ— */
+    adc_channel.SamplingTime = stime;       /* è®¾ç½®é‡‡æ ·æ—¶é—´ */
     HAL_ADC_ConfigChannel( adc_handle, &adc_channel);   
 }
 
 /**
- * @brief       »ñµÃADC×ª»»ºóµÄ½á¹û
- * @param       ch: Í¨µÀÖµ 0~17£¬È¡Öµ·¶Î§Îª£ºADC_CHANNEL_0~ADC_CHANNEL_17
- * @retval      ÎŞ
+ * @brief       è·å¾—ADCè½¬æ¢åçš„ç»“æœ
+ * @param       ch: é€šé“å€¼ 0~17ï¼Œå–å€¼èŒƒå›´ä¸ºï¼šADC_CHANNEL_0~ADC_CHANNEL_17
+ * @retval      æ— 
  */
 uint32_t adc_get_result(uint32_t ch)
 {
-    adc_channel_set(&g_adc_handle, ch, 1, ADC_SAMPLETIME_480CYCLES);   /* ÉèÖÃÍ¨µÀ£¬ĞòÁĞºÍ²ÉÑùÊ±¼ä */
-    HAL_ADC_Start(&g_adc_handle);                                       /* ¿ªÆôADC */
-    HAL_ADC_PollForConversion(&g_adc_handle, 10);                       /* ÂÖÑ¯×ª»» */
+    adc_channel_set(&g_adc_handle, ch, 1, ADC_SAMPLETIME_480CYCLES);   /* è®¾ç½®é€šé“ï¼Œåºåˆ—å’Œé‡‡æ ·æ—¶é—´ */
+    HAL_ADC_Start(&g_adc_handle);                                       /* å¼€å¯ADC */
+    HAL_ADC_PollForConversion(&g_adc_handle, 10);                       /* è½®è¯¢è½¬æ¢ */
 
-    return (uint16_t)HAL_ADC_GetValue(&g_adc_handle);                   /* ·µ»Ø×î½üÒ»´ÎADC1¹æÔò×éµÄ×ª»»½á¹û */
+    return (uint16_t)HAL_ADC_GetValue(&g_adc_handle);                   /* è¿”å›æœ€è¿‘ä¸€æ¬¡ADC1è§„åˆ™ç»„çš„è½¬æ¢ç»“æœ */
 }
 
 /**
- * @brief       »ñÈ¡Í¨µÀchµÄ×ª»»Öµ£¬È¡times´Î, È»ºóÆ½¾ù
- * @param       ch      : Í¨µÀºÅ, 0~17
- * @param       times   : »ñÈ¡´ÎÊı
- * @retval      Í¨µÀchµÄtimes´Î×ª»»½á¹ûÆ½¾ùÖµ
+ * @brief       è·å–é€šé“chçš„è½¬æ¢å€¼ï¼Œå–timesæ¬¡, ç„¶åå¹³å‡
+ * @param       ch      : é€šé“å·, 0~17
+ * @param       times   : è·å–æ¬¡æ•°
+ * @retval      é€šé“chçš„timesæ¬¡è½¬æ¢ç»“æœå¹³å‡å€¼
  */
 uint32_t adc_get_result_average(uint32_t ch, uint8_t times)
 {
     uint32_t temp_val = 0;
     uint8_t t;
 
-    for (t = 0; t < times; t++)     /* »ñÈ¡times´ÎÊı¾İ */
+    for (t = 0; t < times; t++)     /* è·å–timesæ¬¡æ•°æ® */
     {
         temp_val += adc_get_result(ch);
         delay_ms(5);
     }
 
-    return temp_val / times;        /* ·µ»ØÆ½¾ùÖµ */
+    return temp_val / times;        /* è¿”å›å¹³å‡å€¼ */
 }
 
 

@@ -1,28 +1,28 @@
 /**
  ****************************************************************************************************
  * @file        lcd.h
- * @author      ����ԭ���Ŷ�(ALIENTEK)
+ * @author      正点原子团队(ALIENTEK)
  * @version     V1.1
  * @date        2023-05-29
- * @brief       2.8��/3.5��/4.3��/7�� TFTLCD(MCU��) ��������
- *              ֧������IC�ͺŰ���:ILI9341/NT35310/NT35510/SSD1963/ST7789/ST7796/ILI9806��
+ * @brief       2.8寸/3.5寸/4.3寸/7寸 TFTLCD(MCU屏) 驱动代码
+ *              支持驱动IC型号包括:ILI9341/NT35310/NT35510/SSD1963/ST7789/ST7796/ILI9806等
  *
- * @license     Copyright (c) 2020-2032, �������������ӿƼ����޹�˾
+ * @license     Copyright (c) 2020-2032, 广州市星翼电子科技有限公司
  ****************************************************************************************************
  * @attention
  *
- * ʵ��ƽ̨:����ԭ�� ̽���� F407������
- * ������Ƶ:www.yuanzige.com
- * ������̳:www.openedv.com
- * ��˾��ַ:www.alientek.com
- * �����ַ:openedv.taobao.com
+ * 实验平台:正点原子 探索者 F407开发板
+ * 在线视频:www.yuanzige.com
+ * 技术论坛:www.openedv.com
+ * 公司网址:www.alientek.com
+ * 购买地址:openedv.taobao.com
  *
- * �޸�˵��
+ * 修改说明
  * V1.0 20211016
- * ��һ�η���
+ * 第一次发布
  * V1.1 20230529
- * 1��������ST7796��ILI9806 IC֧��
- * 2���򻯲��ִ��룬���ⳤ�ж�
+ * 1，新增对ST7796和ILI9806 IC支持
+ * 2，简化部分代码，避免长判定
  ****************************************************************************************************
  */
 
@@ -34,78 +34,78 @@
 
 
 /******************************************************************************************/
-/* LCD RST/WR/RD/BL/CS/RS ���� ���� 
- * LCD_D0~D15,��������̫��,�Ͳ������ﶨ����,ֱ����lcd_init�����޸�.��������ֲ��ʱ��,���˸�
- * ��6��IO��, ���ø�LCD_Init�����D0~D15���ڵ�IO��.
+/* LCD RST/WR/RD/BL/CS/RS 引脚 定义 
+ * LCD_D0~D15,由于引脚太多,就不在这里定义了,直接在lcd_init里面修改.所以在移植的时候,除了改
+ * 这6个IO口, 还得改LCD_Init里面的D0~D15所在的IO口.
  */
 
-/* RESET ��ϵͳ��λ�Ź��� �������ﲻ�ö��� RESET���� */
+/* RESET 和系统复位脚共用 所以这里不用定义 RESET引脚 */
 //#define LCD_RST_GPIO_PORT               GPIOx
 //#define LCD_RST_GPIO_PIN                SYS_GPIO_PINx
-//#define LCD_RST_GPIO_CLK_ENABLE()       do{ __HAL_RCC_GPIOx_CLK_ENABLE(); }while(0)   /* ����IO��ʱ��ʹ�� */
+//#define LCD_RST_GPIO_CLK_ENABLE()       do{ __HAL_RCC_GPIOx_CLK_ENABLE(); }while(0)   /* 所在IO口时钟使能 */
 
 #define LCD_WR_GPIO_PORT                GPIOD
 #define LCD_WR_GPIO_PIN                 GPIO_PIN_5
-#define LCD_WR_GPIO_CLK_ENABLE()        do{ __HAL_RCC_GPIOD_CLK_ENABLE(); }while(0)     /* ����IO��ʱ��ʹ�� */
+#define LCD_WR_GPIO_CLK_ENABLE()        do{ __HAL_RCC_GPIOD_CLK_ENABLE(); }while(0)     /* 所在IO口时钟使能 */
 
 #define LCD_RD_GPIO_PORT                GPIOD
 #define LCD_RD_GPIO_PIN                 GPIO_PIN_4
-#define LCD_RD_GPIO_CLK_ENABLE()        do{ __HAL_RCC_GPIOD_CLK_ENABLE(); }while(0)     /* ����IO��ʱ��ʹ�� */
+#define LCD_RD_GPIO_CLK_ENABLE()        do{ __HAL_RCC_GPIOD_CLK_ENABLE(); }while(0)     /* 所在IO口时钟使能 */
 
 #define LCD_BL_GPIO_PORT                GPIOB
 #define LCD_BL_GPIO_PIN                 GPIO_PIN_15
-#define LCD_BL_GPIO_CLK_ENABLE()        do{ __HAL_RCC_GPIOB_CLK_ENABLE(); }while(0)     /* ��������IO��ʱ��ʹ�� */
+#define LCD_BL_GPIO_CLK_ENABLE()        do{ __HAL_RCC_GPIOB_CLK_ENABLE(); }while(0)     /* 背光所在IO口时钟使能 */
 
-/* LCD_CS(��Ҫ����LCD_FSMC_NEX������ȷ��IO��) �� LCD_RS(��Ҫ����LCD_FSMC_AX������ȷ��IO��) ���� ���� */
+/* LCD_CS(需要根据LCD_FSMC_NEX设置正确的IO口) 和 LCD_RS(需要根据LCD_FSMC_AX设置正确的IO口) 引脚 定义 */
 #define LCD_CS_GPIO_PORT                GPIOG
 #define LCD_CS_GPIO_PIN                 GPIO_PIN_12
-#define LCD_CS_GPIO_CLK_ENABLE()        do{ __HAL_RCC_GPIOG_CLK_ENABLE(); }while(0)     /* ����IO��ʱ��ʹ�� */
+#define LCD_CS_GPIO_CLK_ENABLE()        do{ __HAL_RCC_GPIOG_CLK_ENABLE(); }while(0)     /* 所在IO口时钟使能 */
 
 #define LCD_RS_GPIO_PORT                GPIOF
 #define LCD_RS_GPIO_PIN                 GPIO_PIN_12
-#define LCD_RS_GPIO_CLK_ENABLE()        do{ __HAL_RCC_GPIOF_CLK_ENABLE(); }while(0)     /* ����IO��ʱ��ʹ�� */
+#define LCD_RS_GPIO_CLK_ENABLE()        do{ __HAL_RCC_GPIOF_CLK_ENABLE(); }while(0)     /* 所在IO口时钟使能 */
 
-/* FSMC��ز��� ���� 
- * ע��: ����Ĭ����ͨ��FSMC��1������LCD, ��1��4��Ƭѡ: FSMC_NE1~4
+/* FSMC相关参数 定义 
+ * 注意: 我们默认是通过FSMC块1来连接LCD, 块1有4个片选: FSMC_NE1~4
  *
- * �޸�LCD_FSMC_NEX, ��Ӧ��LCD_CS_GPIO�������Ҳ�ø�
- * �޸�LCD_FSMC_AX , ��Ӧ��LCD_RS_GPIO�������Ҳ�ø�
+ * 修改LCD_FSMC_NEX, 对应的LCD_CS_GPIO相关设置也得改
+ * 修改LCD_FSMC_AX , 对应的LCD_RS_GPIO相关设置也得改
  */
-#define LCD_FSMC_NEX         4              /* ʹ��FSMC_NE4��LCD_CS,ȡֵ��Χֻ����: 1~4 */
-#define LCD_FSMC_AX          6              /* ʹ��FSMC_A6��LCD_RS,ȡֵ��Χ��: 0 ~ 25 */
+#define LCD_FSMC_NEX         4              /* 使用FSMC_NE4接LCD_CS,取值范围只能是: 1~4 */
+#define LCD_FSMC_AX          6              /* 使用FSMC_A6接LCD_RS,取值范围是: 0 ~ 25 */
 
-#define LCD_FSMC_BCRX        FSMC_Bank1->BTCR[(LCD_FSMC_NEX - 1) * 2]       /* BCR�Ĵ���,����LCD_FSMC_NEX�Զ����� */
-#define LCD_FSMC_BTRX        FSMC_Bank1->BTCR[(LCD_FSMC_NEX - 1) * 2 + 1]   /* BTR�Ĵ���,����LCD_FSMC_NEX�Զ����� */
-#define LCD_FSMC_BWTRX       FSMC_Bank1E->BWTR[(LCD_FSMC_NEX - 1) * 2]      /* BWTR�Ĵ���,����LCD_FSMC_NEX�Զ����� */
+#define LCD_FSMC_BCRX        FSMC_Bank1->BTCR[(LCD_FSMC_NEX - 1) * 2]       /* BCR寄存器,根据LCD_FSMC_NEX自动计算 */
+#define LCD_FSMC_BTRX        FSMC_Bank1->BTCR[(LCD_FSMC_NEX - 1) * 2 + 1]   /* BTR寄存器,根据LCD_FSMC_NEX自动计算 */
+#define LCD_FSMC_BWTRX       FSMC_Bank1E->BWTR[(LCD_FSMC_NEX - 1) * 2]      /* BWTR寄存器,根据LCD_FSMC_NEX自动计算 */
 
 /******************************************************************************************/
 
-/* LCD��Ҫ������ */
+/* LCD重要参数集 */
 typedef struct
 {
-    uint16_t width;     /* LCD ���� */
-    uint16_t height;    /* LCD �߶� */
+    uint16_t width;     /* LCD 宽度 */
+    uint16_t height;    /* LCD 高度 */
     uint16_t id;        /* LCD ID */
-    uint8_t dir;        /* ���������������ƣ�0��������1�������� */
-    uint16_t wramcmd;   /* ��ʼдgramָ�� */
-    uint16_t setxcmd;   /* ����x����ָ�� */
-    uint16_t setycmd;   /* ����y����ָ�� */
+    uint8_t dir;        /* 横屏还是竖屏控制：0，竖屏；1，横屏。 */
+    uint16_t wramcmd;   /* 开始写gram指令 */
+    uint16_t setxcmd;   /* 设置x坐标指令 */
+    uint16_t setycmd;   /* 设置y坐标指令 */
 } _lcd_dev;
 
-/* LCD���� */
-extern _lcd_dev lcddev; /* ����LCD��Ҫ���� */
+/* LCD参数 */
+extern _lcd_dev lcddev; /* 管理LCD重要参数 */
 
-/* LCD�Ļ�����ɫ�ͱ���ɫ */
-extern uint32_t  g_point_color;     /* Ĭ�Ϻ�ɫ */
-extern uint32_t  g_back_color;      /* ������ɫ.Ĭ��Ϊ��ɫ */
+/* LCD的画笔颜色和背景色 */
+extern uint32_t  g_point_color;     /* 默认红色 */
+extern uint32_t  g_back_color;      /* 背景颜色.默认为白色 */
 
-/* LCD������� */
+/* LCD背光控制 */
 #define LCD_BL(x)   do{ x ? \
                       HAL_GPIO_WritePin(LCD_BL_GPIO_PORT, LCD_BL_GPIO_PIN, GPIO_PIN_SET) : \
                       HAL_GPIO_WritePin(LCD_BL_GPIO_PORT, LCD_BL_GPIO_PIN, GPIO_PIN_RESET); \
                      }while(0)
 
-/* LCD��ַ�ṹ�� */
+/* LCD地址结构体 */
 typedef struct
 {
     volatile uint16_t LCD_REG;
@@ -113,125 +113,125 @@ typedef struct
 } LCD_TypeDef;
 
 
-/* LCD_BASE����ϸ���㷽��:
- * ����һ��ʹ��FSMC�Ŀ�1(BANK1)������TFTLCDҺ����(MCU��), ��1��ַ��Χ�ܴ�СΪ256MB,���ֳ�4��:
- * �洢��1(FSMC_NE1)��ַ��Χ: 0x6000 0000 ~ 0x63FF FFFF
- * �洢��2(FSMC_NE2)��ַ��Χ: 0x6400 0000 ~ 0x67FF FFFF
- * �洢��3(FSMC_NE3)��ַ��Χ: 0x6800 0000 ~ 0x6BFF FFFF
- * �洢��4(FSMC_NE4)��ַ��Χ: 0x6C00 0000 ~ 0x6FFF FFFF
+/* LCD_BASE的详细解算方法:
+ * 我们一般使用FSMC的块1(BANK1)来驱动TFTLCD液晶屏(MCU屏), 块1地址范围总大小为256MB,均分成4块:
+ * 存储块1(FSMC_NE1)地址范围: 0x6000 0000 ~ 0x63FF FFFF
+ * 存储块2(FSMC_NE2)地址范围: 0x6400 0000 ~ 0x67FF FFFF
+ * 存储块3(FSMC_NE3)地址范围: 0x6800 0000 ~ 0x6BFF FFFF
+ * 存储块4(FSMC_NE4)地址范围: 0x6C00 0000 ~ 0x6FFF FFFF
  *
- * ������Ҫ����Ӳ�����ӷ�ʽѡ����ʵ�Ƭѡ(����LCD_CS)�͵�ַ��(����LCD_RS)
- * ̽����F407������ʹ��FSMC_NE4����LCD_CS, FSMC_A6����LCD_RS ,16λ������,���㷽������:
- * ����FSMC_NE4�Ļ���ַΪ: 0x6C00 0000;     NEX�Ļ�ַΪ(x=1/2/3/4): 0x6000 0000 + (0x400 0000 * (x - 1))
- * FSMC_A6��Ӧ��ֵַ: 2^6 * 2 = 0x80;    FSMC_Ay��Ӧ�ĵ�ַΪ(y = 0 ~ 25): 2^y * 2
+ * 我们需要根据硬件连接方式选择合适的片选(连接LCD_CS)和地址线(连接LCD_RS)
+ * 探索者F407开发板使用FSMC_NE4连接LCD_CS, FSMC_A6连接LCD_RS ,16位数据线,计算方法如下:
+ * 首先FSMC_NE4的基地址为: 0x6C00 0000;     NEX的基址为(x=1/2/3/4): 0x6000 0000 + (0x400 0000 * (x - 1))
+ * FSMC_A6对应地址值: 2^6 * 2 = 0x80;    FSMC_Ay对应的地址为(y = 0 ~ 25): 2^y * 2
  *
- * LCD->LCD_REG,��ӦLCD_RS = 0(LCD�Ĵ���); LCD->LCD_RAM,��ӦLCD_RS = 1(LCD����)
- * �� LCD->LCD_RAM�ĵ�ַΪ:  0x6C00 0000 + 2^6 * 2 = 0x6C00 0080
- *    LCD->LCD_REG�ĵ�ַ����Ϊ LCD->LCD_RAM֮��������ַ.
- * ��������ʹ�ýṹ�����LCD_REG �� LCD_RAM(REG��ǰ,RAM�ں�,��Ϊ16λ���ݿ���)
- * ��� �ṹ��Ļ���ַ(LCD_BASE) = LCD_RAM - 2 = 0x6C00 0080 -2
+ * LCD->LCD_REG,对应LCD_RS = 0(LCD寄存器); LCD->LCD_RAM,对应LCD_RS = 1(LCD数据)
+ * 则 LCD->LCD_RAM的地址为:  0x6C00 0000 + 2^6 * 2 = 0x6C00 0080
+ *    LCD->LCD_REG的地址可以为 LCD->LCD_RAM之外的任意地址.
+ * 由于我们使用结构体管理LCD_REG 和 LCD_RAM(REG在前,RAM在后,均为16位数据宽度)
+ * 因此 结构体的基地址(LCD_BASE) = LCD_RAM - 2 = 0x6C00 0080 -2
  *
- * ����ͨ�õļ��㹫ʽΪ((Ƭѡ��FSMC_NEX)X=1/2/3/4, (RS�ӵ�ַ��FSMC_Ay)y=0~25):
+ * 更加通用的计算公式为((片选脚FSMC_NEX)X=1/2/3/4, (RS接地址线FSMC_Ay)y=0~25):
  *          LCD_BASE = (0x6000 0000 + (0x400 0000 * (x - 1))) | (2^y * 2 -2)
- *          ��Ч��(ʹ����λ����)
+ *          等效于(使用移位操作)
  *          LCD_BASE = (0x6000 0000 + (0x400 0000 * (x - 1))) | ((1 << y) * 2 -2)
  */
 #define LCD_BASE        (uint32_t)((0x60000000 + (0x4000000 * (LCD_FSMC_NEX - 1))) | (((1 << LCD_FSMC_AX) * 2) -2))
 #define LCD             ((LCD_TypeDef *) LCD_BASE)
 
 /******************************************************************************************/
-/* LCDɨ�跽�����ɫ ���� */
+/* LCD扫描方向和颜色 定义 */
 
-/* ɨ�跽���� */
-#define L2R_U2D         0           /* ������,���ϵ��� */
-#define L2R_D2U         1           /* ������,���µ��� */
-#define R2L_U2D         2           /* ���ҵ���,���ϵ��� */
-#define R2L_D2U         3           /* ���ҵ���,���µ��� */
+/* 扫描方向定义 */
+#define L2R_U2D         0           /* 从左到右,从上到下 */
+#define L2R_D2U         1           /* 从左到右,从下到上 */
+#define R2L_U2D         2           /* 从右到左,从上到下 */
+#define R2L_D2U         3           /* 从右到左,从下到上 */
 
-#define U2D_L2R         4           /* ���ϵ���,������ */
-#define U2D_R2L         5           /* ���ϵ���,���ҵ��� */
-#define D2U_L2R         6           /* ���µ���,������ */
-#define D2U_R2L         7           /* ���µ���,���ҵ��� */
+#define U2D_L2R         4           /* 从上到下,从左到右 */
+#define U2D_R2L         5           /* 从上到下,从右到左 */
+#define D2U_L2R         6           /* 从下到上,从左到右 */
+#define D2U_R2L         7           /* 从下到上,从右到左 */
 
-#define DFT_SCAN_DIR    L2R_U2D     /* Ĭ�ϵ�ɨ�跽�� */
+#define DFT_SCAN_DIR    L2R_U2D     /* 默认的扫描方向 */
 
-/* ���û�����ɫ */
-#define WHITE           0xFFFF      /* ��ɫ */
-#define BLACK           0x0000      /* ��ɫ */
-#define RED             0xF800      /* ��ɫ */
-#define GREEN           0x07E0      /* ��ɫ */
-#define BLUE            0x001F      /* ��ɫ */ 
-#define MAGENTA         0xF81F      /* Ʒ��ɫ/�Ϻ�ɫ = BLUE + RED */
-#define YELLOW          0xFFE0      /* ��ɫ = GREEN + RED */
-#define CYAN            0x07FF      /* ��ɫ = GREEN + BLUE */  
+/* 常用画笔颜色 */
+#define WHITE           0xFFFF      /* 白色 */
+#define BLACK           0x0000      /* 黑色 */
+#define RED             0xF800      /* 红色 */
+#define GREEN           0x07E0      /* 绿色 */
+#define BLUE            0x001F      /* 蓝色 */ 
+#define MAGENTA         0xF81F      /* 品红色/紫红色 = BLUE + RED */
+#define YELLOW          0xFFE0      /* 黄色 = GREEN + RED */
+#define CYAN            0x07FF      /* 青色 = GREEN + BLUE */  
 
-/* �ǳ�����ɫ */
-#define BROWN           0xBC40      /* ��ɫ */
-#define BRRED           0xFC07      /* �غ�ɫ */
-#define GRAY            0x8430      /* ��ɫ */ 
-#define DARKBLUE        0x01CF      /* ����ɫ */
-#define LIGHTBLUE       0x7D7C      /* ǳ��ɫ */ 
-#define GRAYBLUE        0x5458      /* ����ɫ */ 
-#define LIGHTGREEN      0x841F      /* ǳ��ɫ */  
-#define LGRAY           0xC618      /* ǳ��ɫ(PANNEL),���屳��ɫ */ 
-#define LGRAYBLUE       0xA651      /* ǳ����ɫ(�м����ɫ) */ 
-#define LBBLUE          0x2B12      /* ǳ����ɫ(ѡ����Ŀ�ķ�ɫ) */ 
+/* 非常用颜色 */
+#define BROWN           0xBC40      /* 棕色 */
+#define BRRED           0xFC07      /* 棕红色 */
+#define GRAY            0x8430      /* 灰色 */ 
+#define DARKBLUE        0x01CF      /* 深蓝色 */
+#define LIGHTBLUE       0x7D7C      /* 浅蓝色 */ 
+#define GRAYBLUE        0x5458      /* 灰蓝色 */ 
+#define LIGHTGREEN      0x841F      /* 浅绿色 */  
+#define LGRAY           0xC618      /* 浅灰色(PANNEL),窗体背景色 */ 
+#define LGRAYBLUE       0xA651      /* 浅灰蓝色(中间层颜色) */ 
+#define LBBLUE          0x2B12      /* 浅棕蓝色(选择条目的反色) */ 
 
 /******************************************************************************************/
-/* SSD1963������ò���(һ�㲻�ø�) */
+/* SSD1963相关配置参数(一般不用改) */
 
-/* LCD�ֱ������� */ 
-#define SSD_HOR_RESOLUTION      800     /* LCDˮƽ�ֱ��� */ 
-#define SSD_VER_RESOLUTION      480     /* LCD��ֱ�ֱ��� */ 
+/* LCD分辨率设置 */ 
+#define SSD_HOR_RESOLUTION      800     /* LCD水平分辨率 */ 
+#define SSD_VER_RESOLUTION      480     /* LCD垂直分辨率 */ 
 
-/* LCD������������ */ 
-#define SSD_HOR_PULSE_WIDTH     1       /* ˮƽ���� */ 
-#define SSD_HOR_BACK_PORCH      46      /* ˮƽǰ�� */ 
-#define SSD_HOR_FRONT_PORCH     210     /* ˮƽ���� */ 
+/* LCD驱动参数设置 */ 
+#define SSD_HOR_PULSE_WIDTH     1       /* 水平脉宽 */ 
+#define SSD_HOR_BACK_PORCH      46      /* 水平前廊 */ 
+#define SSD_HOR_FRONT_PORCH     210     /* 水平后廊 */ 
 
-#define SSD_VER_PULSE_WIDTH     1       /* ��ֱ���� */ 
-#define SSD_VER_BACK_PORCH      23      /* ��ֱǰ�� */ 
-#define SSD_VER_FRONT_PORCH     22      /* ��ֱǰ�� */ 
+#define SSD_VER_PULSE_WIDTH     1       /* 垂直脉宽 */ 
+#define SSD_VER_BACK_PORCH      23      /* 垂直前廊 */ 
+#define SSD_VER_FRONT_PORCH     22      /* 垂直前廊 */ 
 
-/* ���¼����������Զ����� */ 
+/* 如下几个参数，自动计算 */ 
 #define SSD_HT          (SSD_HOR_RESOLUTION + SSD_HOR_BACK_PORCH + SSD_HOR_FRONT_PORCH)
 #define SSD_HPS         (SSD_HOR_BACK_PORCH)
 #define SSD_VT          (SSD_VER_RESOLUTION + SSD_VER_BACK_PORCH + SSD_VER_FRONT_PORCH)
 #define SSD_VPS         (SSD_VER_BACK_PORCH)
    
 /******************************************************************************************/
-/* �������� */
+/* 函数声明 */
 
-void lcd_wr_data(volatile uint16_t data);            /* LCDд���� */
-void lcd_wr_regno(volatile uint16_t regno);          /* LCDд�Ĵ������/��ַ */
-void lcd_write_reg(uint16_t regno, uint16_t data);   /* LCDд�Ĵ�����ֵ */
+void lcd_wr_data(volatile uint16_t data);            /* LCD写数据 */
+void lcd_wr_regno(volatile uint16_t regno);          /* LCD写寄存器编号/地址 */
+void lcd_write_reg(uint16_t regno, uint16_t data);   /* LCD写寄存器的值 */
 
-void lcd_init(void);                        /* ��ʼ��LCD */ 
-void lcd_display_on(void);                  /* ����ʾ */ 
-void lcd_display_off(void);                 /* ����ʾ */
-void lcd_scan_dir(uint8_t dir);             /* ������ɨ�跽�� */ 
-void lcd_display_dir(uint8_t dir);          /* ������Ļ��ʾ���� */ 
-void lcd_ssd_backlight_set(uint8_t pwm);    /* SSD1963 ������� */ 
+void lcd_init(void);                        /* 初始化LCD */ 
+void lcd_display_on(void);                  /* 开显示 */ 
+void lcd_display_off(void);                 /* 关显示 */
+void lcd_scan_dir(uint8_t dir);             /* 设置屏扫描方向 */ 
+void lcd_display_dir(uint8_t dir);          /* 设置屏幕显示方向 */ 
+void lcd_ssd_backlight_set(uint8_t pwm);    /* SSD1963 背光控制 */ 
 
-void lcd_write_ram_prepare(void);                           /* ׼��дGRAM */ 
-void lcd_set_cursor(uint16_t x, uint16_t y);                /* ���ù�� */ 
-uint32_t lcd_read_point(uint16_t x, uint16_t y);            /* ����(32λ��ɫ,����LTDC) */
-void lcd_draw_point(uint16_t x, uint16_t y, uint32_t color);/* ����(32λ��ɫ,����LTDC) */
+void lcd_write_ram_prepare(void);                           /* 准备写GRAM */ 
+void lcd_set_cursor(uint16_t x, uint16_t y);                /* 设置光标 */ 
+uint32_t lcd_read_point(uint16_t x, uint16_t y);            /* 读点(32位颜色,兼容LTDC) */
+void lcd_draw_point(uint16_t x, uint16_t y, uint32_t color);/* 画点(32位颜色,兼容LTDC) */
 
-void lcd_clear(uint16_t color);                                                             /* LCD���� */
-void lcd_fill_circle(uint16_t x, uint16_t y, uint16_t r, uint16_t color);                   /* ���ʵ��Բ */
-void lcd_draw_circle(uint16_t x0, uint16_t y0, uint8_t r, uint16_t color);                  /* ��Բ */
-void lcd_draw_hline(uint16_t x, uint16_t y, uint16_t len, uint16_t color);                  /* ��ˮƽ�� */
-void lcd_set_window(uint16_t sx, uint16_t sy, uint16_t width, uint16_t height);             /* ���ô��� */
-void lcd_fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint32_t color);          /* ��ɫ������(32λ��ɫ,����LTDC) */
-void lcd_color_fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint16_t *color);   /* ��ɫ������ */
-void lcd_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);     /* ��ֱ�� */
-void lcd_draw_rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);/* ������ */
+void lcd_clear(uint16_t color);                                                             /* LCD清屏 */
+void lcd_fill_circle(uint16_t x, uint16_t y, uint16_t r, uint16_t color);                   /* 填充实心圆 */
+void lcd_draw_circle(uint16_t x0, uint16_t y0, uint8_t r, uint16_t color);                  /* 画圆 */
+void lcd_draw_hline(uint16_t x, uint16_t y, uint16_t len, uint16_t color);                  /* 画水平线 */
+void lcd_set_window(uint16_t sx, uint16_t sy, uint16_t width, uint16_t height);             /* 设置窗口 */
+void lcd_fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint32_t color);          /* 纯色填充矩形(32位颜色,兼容LTDC) */
+void lcd_color_fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint16_t *color);   /* 彩色填充矩形 */
+void lcd_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);     /* 画直线 */
+void lcd_draw_rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);/* 画矩形 */
 
-void lcd_show_char(uint16_t x, uint16_t y, char chr, uint8_t size, uint8_t mode, uint16_t color);                       /* ��ʾһ���ַ� */
-void lcd_show_num(uint16_t x, uint16_t y, uint32_t num, uint8_t len, uint8_t size, uint16_t color);                     /* ��ʾ���� */
-void lcd_show_xnum(uint16_t x, uint16_t y, uint32_t num, uint8_t len, uint8_t size, uint8_t mode, uint16_t color);      /* ��չ��ʾ���� */
-void lcd_show_string(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint8_t size, char *p, uint16_t color);   /* ��ʾ�ַ��� */
+void lcd_show_char(uint16_t x, uint16_t y, char chr, uint8_t size, uint8_t mode, uint16_t color);                       /* 显示一个字符 */
+void lcd_show_num(uint16_t x, uint16_t y, uint32_t num, uint8_t len, uint8_t size, uint16_t color);                     /* 显示数字 */
+void lcd_show_xnum(uint16_t x, uint16_t y, uint32_t num, uint8_t len, uint8_t size, uint8_t mode, uint16_t color);      /* 扩展显示数字 */
+void lcd_show_string(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint8_t size, char *p, uint16_t color);   /* 显示字符串 */
 
 #endif
 

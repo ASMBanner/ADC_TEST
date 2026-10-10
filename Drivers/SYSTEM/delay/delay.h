@@ -1,24 +1,24 @@
 /**
  ****************************************************************************************************
  * @file        delay.h
- * @author      ÕıµãÔ­×ÓÍÅ¶Ó(ALIENTEK)
+ * @author      æ­£ç‚¹åŸå­å›¢é˜Ÿ(ALIENTEK)
  * @version     V1.0
  * @date        2021-10-14
- * @brief       Ê¹ÓÃSysTickµÄÆÕÍ¨¼ÆÊıÄ£Ê½¶ÔÑÓ³Ù½øĞĞ¹ÜÀí(Ö§³Öucosii)
- *              Ìá¹©delay_init³õÊ¼»¯º¯Êı£¬ delay_usºÍdelay_msµÈÑÓÊ±º¯Êı
- * @license     Copyright (c) 2020-2032, ¹ãÖİÊĞĞÇÒíµç×Ó¿Æ¼¼ÓĞÏŞ¹«Ë¾
+ * @brief       ä½¿ç”¨SysTickçš„æ™®é€šè®¡æ•°æ¨¡å¼å¯¹å»¶è¿Ÿè¿›è¡Œç®¡ç†(æ”¯æŒucosii)
+ *              æä¾›delay_initåˆå§‹åŒ–å‡½æ•°ï¼Œ delay_uså’Œdelay_msç­‰å»¶æ—¶å‡½æ•°
+ * @license     Copyright (c) 2020-2032, å¹¿å·å¸‚æ˜Ÿç¿¼ç”µå­ç§‘æŠ€æœ‰é™å…¬å¸
  ****************************************************************************************************
  * @attention
  *
- * ÊµÑéÆ½Ì¨:ÕıµãÔ­×Ó Ì½Ë÷Õß F407¿ª·¢°å
- * ÔÚÏßÊÓÆµ:www.yuanzige.com
- * ¼¼ÊõÂÛÌ³:www.openedv.com
- * ¹«Ë¾ÍøÖ·:www.alientek.com
- * ¹ºÂòµØÖ·:openedv.taobao.com
+ * å®éªŒå¹³å°:æ­£ç‚¹åŸå­ æ¢ç´¢è€… F407å¼€å‘æ¿
+ * åœ¨çº¿è§†é¢‘:www.yuanzige.com
+ * æŠ€æœ¯è®ºå›:www.openedv.com
+ * å…¬å¸ç½‘å€:www.alientek.com
+ * è´­ä¹°åœ°å€:openedv.taobao.com
  *
- * ĞŞ¸ÄËµÃ÷
+ * ä¿®æ”¹è¯´æ˜
  * V1.0 20211014
- * µÚÒ»´Î·¢²¼
+ * ç¬¬ä¸€æ¬¡å‘å¸ƒ
  *
  ****************************************************************************************************
  */
@@ -29,12 +29,12 @@
 #include "./SYSTEM/sys/sys.h"
 
 
-void delay_init(uint16_t sysclk);           /* ³õÊ¼»¯ÑÓ³Ùº¯Êı */
-void delay_ms(uint16_t nms);                /* ÑÓÊ±nms */
-void delay_us(uint32_t nus);                /* ÑÓÊ±nus */
+void delay_init(uint16_t sysclk);           /* åˆå§‹åŒ–å»¶è¿Ÿå‡½æ•° */
+void delay_ms(uint16_t nms);                /* å»¶æ—¶nms */
+void delay_us(uint32_t nus);                /* å»¶æ—¶nus */
 
-#if (!SYS_SUPPORT_OS)                       /* Ã»ÓĞÊ¹ÓÃSystickÖĞ¶Ï */
-    void HAL_Delay(uint32_t Delay);         /* HAL¿âµÄÑÓÊ±º¯Êı£¬SDIOµÈĞèÒªÓÃµ½ */
+#if (!SYS_SUPPORT_OS)                       /* æ²¡æœ‰ä½¿ç”¨Systickä¸­æ–­ */
+    void HAL_Delay(uint32_t Delay);         /* HALåº“çš„å»¶æ—¶å‡½æ•°ï¼ŒSDIOç­‰éœ€è¦ç”¨åˆ° */
 #endif
 
 #endif
