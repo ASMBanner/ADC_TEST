@@ -1,5 +1,5 @@
 /* --------------------------------------------------------------------------
- * 链接脚本：STM32F407xx (探索者 F407, 1MB FLASH / 128KB SRAM / 64KB CCMRAM)
+ * 链接脚本：STM32F407xx (1MB FLASH / 128KB SRAM / 64KB CCMRAM)
  * 内存布局与 MDK-ARM 工程 atk_f407.uvprojx 保持一致：
  *   IROM   0x08000000  1024K
  *   IRAM   0x20000000  128K

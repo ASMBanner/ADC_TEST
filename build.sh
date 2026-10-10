@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =============================================================================
-# build.sh —— STM32F407 (探索者) 工程 GCC 编译脚本
+# build.sh —— STM32F407 工程 GCC 编译脚本
 #
 # 功能：使用 arm-none-eabi-gcc 编译整个工程，生成
 #         Output/atk_f407.elf / atk_f407.bin / atk_f407.hex
